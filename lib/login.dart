@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kulup/register.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        backgroundColor: Colors.green,
+        backgroundColor: Color.fromARGB(255, 25, 139, 28),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -25,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Container(
                     margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.width * 0.15),
+                        top: MediaQuery.of(context).size.width * 0.3),
                     child: Text(
                       "Merhaba,",
                       style: TextStyle(
@@ -66,7 +67,8 @@ class _LoginPageState extends State<LoginPage> {
                         controller: usernameController,
                         inputFormatters: [LengthLimitingTextInputFormatter(20)],
                         style: TextStyle(
-                            fontSize: MediaQuery.of(context).size.height * 0.022,
+                            fontSize:
+                                MediaQuery.of(context).size.height * 0.022,
                             fontFamily: "Lalezar"),
                         cursorHeight: MediaQuery.of(context).size.height * 0.02,
                         cursorColor: Colors.black,
@@ -108,7 +110,8 @@ class _LoginPageState extends State<LoginPage> {
                         controller: passwordController,
                         inputFormatters: [LengthLimitingTextInputFormatter(20)],
                         style: TextStyle(
-                            fontSize: MediaQuery.of(context).size.height * 0.022,
+                            fontSize:
+                                MediaQuery.of(context).size.height * 0.022,
                             fontFamily: "Lalezar"),
                         cursorHeight: MediaQuery.of(context).size.height * 0.02,
                         cursorColor: Colors.black,
@@ -140,7 +143,8 @@ class _LoginPageState extends State<LoginPage> {
                             child: Text(
                               "Şifremi unuttum",
                               style: TextStyle(
-                                  fontFamily: "Lalezar", color: Colors.grey[200]),
+                                  fontFamily: "Lalezar",
+                                  color: Colors.grey[200]),
                             ))),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.07,
@@ -151,7 +155,8 @@ class _LoginPageState extends State<LoginPage> {
                           "Giriş Yap",
                           style: TextStyle(
                               fontFamily: "Lalezar",
-                              fontSize: MediaQuery.of(context).size.width * 0.05),
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.05),
                         ),
                         style: FilledButton.styleFrom(
                             backgroundColor: Colors.black,
@@ -161,6 +166,38 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.6,
+                height: MediaQuery.of(context).size.height * 0.002,
+                decoration: BoxDecoration(color: Colors.grey[200]),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.01,
+              ),
+              Text(
+                "Henüz hesabın yok mu?",
+                style: TextStyle(
+                    fontFamily: "Lalezar",
+                    fontSize: MediaQuery.of(context).size.width * 0.04),
+              ),
+              InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterPage()),
+                    );
+                  },
+                  child: Text(
+                    "Kayıt Ol",
+                    style: TextStyle(
+                        fontFamily: "Lalezar",
+                        color: Colors.grey[200],
+                        fontSize: MediaQuery.of(context).size.width * 0.05),
+                  ))
             ],
           ),
         ),

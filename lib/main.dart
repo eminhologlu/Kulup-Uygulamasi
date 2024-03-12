@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kulup/loading.dart';
 import 'package:kulup/login.dart';
+import 'package:kulup/register.dart';
 
 void main() {
   runApp(const MyApp());
