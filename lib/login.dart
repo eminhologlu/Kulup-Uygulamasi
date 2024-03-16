@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kulup/anasayfa.dart';
 import 'package:kulup/register.dart';
 
 class LoginPage extends StatefulWidget {
@@ -150,7 +151,13 @@ class _LoginPageState extends State<LoginPage> {
                       height: MediaQuery.of(context).size.height * 0.07,
                     ),
                     FilledButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => Anasayfa()),
+                            (Route<dynamic> route) => false,
+                          );
+                        },
                         child: Text(
                           "Giriş Yap",
                           style: TextStyle(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kulup/anasayfa.dart';
 import 'package:kulup/loading.dart';
 import 'package:kulup/login.dart';
+import 'package:kulup/topluluklar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return LoadingScreen(); // Bekleme ekranını göster
           } else {
-            return Anasayfa(); // Bekleme süresi dolduktan sonra giriş sayfasını göster
+            return LoginPage(); // Bekleme süresi dolduktan sonra giriş sayfasını göster
           }
         },
       ),
