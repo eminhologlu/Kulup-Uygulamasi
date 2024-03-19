@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kulup/loading.dart';
 import 'package:kulup/login.dart';
-import 'package:kulup/topluluklar.dart';
-
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const MyApp());
 }
 
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Shequ',
       debugShowCheckedModeBanner: false,
       home: FutureBuilder(
-        future: Future.delayed(Duration(seconds: 0)), // 5 saniye bekle
+        future: Future.delayed(Duration(seconds: 3)), // 5 saniye bekle
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return LoadingScreen(); // Bekleme ekranını göster

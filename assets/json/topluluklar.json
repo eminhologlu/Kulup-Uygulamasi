@@ -1,0 +1,753 @@
+{
+    "Sayfa1": {
+      "6 Lego Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Ebru BAYKAN",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Zülfü GENÇ",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "6 Lego Öğrenci Topluluğu"
+      },
+      "ACM Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/ACM Logo.jpg",
+        "TOPLULUK BAŞKANI": "İlayda KORKMAZ",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Mehmet KARAKÖSE",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "ACM Öğrenci Topluluğu"
+      },
+      "Adli Bilişim Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/ABT Logo.png",
+        "TOPLULUK BAŞKANI": "Samet Yılmaz TEMEL",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Türker TUNCER",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Adli Bilişim Öğrenci Topluluğu"
+      },
+      "Akademik Düşünce Eğitim Medeniyet Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/ADEM Logo.jpg",
+        "TOPLULUK BAŞKANI": "Emirhan KILIÇ",
+        "TOPLULUK DANIŞMANI": "Doç.Dr. Gökhan GÖKDERE",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Akademik Düşünce Eğitim Medeniyet Öğrenci Topluluğu"
+      },
+      "Akil Gençler Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Naser Ahmad AZİZİ",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Kenan PEKER",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Akil Gençler Öğrenci Topluluğu"
+      },
+      "Aklıllı Sistemler ve Milli Savunma Teknolojileri Öğrenci Topluluğu  (ASİMSAV)": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk%20Logolar%C4%B1/Asimsav%20Logo.jpeg",
+        "TOPLULUK BAŞKANI": "Mehmet GEÇİCİ",
+        "TOPLULUK DANIŞMANI": "Arş.Gör. Muhammet E. ÇOLAK",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Akıllı Sistemler ve Milli Savunma Teknolojileri Öğrenci\nTopluluğu (ASİMSAV)"
+      },
+      "Atçılık ve Binicilik Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "İbrahim Halil BAYLAN",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Mehmet Saltuk ARIKAN",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "Atçılık ve Binicilik Öğrenci Topluluğu"
+      },
+      "Beşiktaşlılar Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "İbrahim KURŞUN",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Abdurrahman KIRTEPE",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "Beşiktaşlılar Öğrenci Topluluğu"
+      },
+      "Bi Dünya Oyuncak Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Fırat KAYA",
+        "TOPLULUK DANIŞMANI": "Doç. Öğr. Üyesi Ahmet KÖSTEKÇİ",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Bi Dünya Oyuncak Öğrenci Topluluğu"
+      },
+      "Bilim ve Fen Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Bilim Fen Logo.jpg",
+        "TOPLULUK BAŞKANI": "Ferhat TOLU",
+        "TOPLULUK DANIŞMANI": "Doç. Dr.Gonca KEÇECİ",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Bilim ve Fen Öğrenci Topluluğu"
+      },
+      "Bilişim ve Eğitim Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Onur Eren EJDER",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Muhammet BAYKARA",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Bilişim ve Eğitim Öğrenci Topluluğu"
+      },
+      "Biyomühendislik Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Ayşenur TÜFENKÇİ",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Kübra KOÇAK",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Biyomühendislik Öğrenci Topluluğu"
+      },
+      "Damla Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Gülbahar AKBAŞ",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üy. Handan KARAKAYA",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Damla Öğrenci Topluluğu"
+      },
+      "Dans Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Elçin TUGAL",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Metin YILMAZ",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Dans Öğrenci Topluluğu"
+      },
+      "Daru'l-Hadis (Hadis Evi) Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Hadi Logo.jpg",
+        "TOPLULUK BAŞKANI": "Beyza BAŞAK",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Ekrem YÜCEL",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Daru'l-Hadis (Hadis Evi) Öğrenci Topluluğu"
+      },
+      "Diş Hekimliği Öğrenciler Birliği Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Yusuf Barış ÖZDEMİR",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Abdullah ÖZEN",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Diş Hekimliği Öğrenciler Birliği Öğrenci Topluluğu"
+      },
+      "Düşünce Akademisi Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Ahmet Enes KIRANŞAL",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Abdullah ÇAĞATAY",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Düşünce Akademisi Öğrenci Topluluğu"
+      },
+      "E-Spor Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/E-Spor Logo.jpeg",
+        "TOPLULUK BAŞKANI": "Emirhan GÖRGÜN",
+        "TOPLULUK DANIŞMANI": "Arş.Gör. Buğra ORHAN",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "E-Spor Öğrenci Topluluğu"
+      },
+      "Eczacılık Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "İrem Solmaz AYHAN",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üyesi Özge SOYLU ETER",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Eczacılık Öğrenci Topluluğu"
+      },
+      "Edebiyat Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Edebiyat Logo.jpeg",
+        "TOPLULUK BAŞKANI": "Mert BAYRAM",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Sema ORUÇ",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Edebiyat Öğrenci Topluluğu"
+      },
+      "Elektro Teknoloji Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Elektro Logo.jpg",
+        "TOPLULUK BAŞKANI": "Ahmet BAYRAKTAR",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Yavuz EROL",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Elektro Teknoloji Öğrenci Topluluğu"
+      },
+      "Engelsiz Fırat Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Duygu ÖZER",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Burcu GEZER ŞEN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Engelsiz Fırat Öğrenci Topluluğu"
+      },
+      "Erasmus Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Erasmus Logo.png",
+        "TOPLULUK BAŞKANI": "-",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Murat KATAR",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Erasmus Öğrenci Topluluğu"
+      },
+      "Eğitim Gönüllüleri Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Abdurrahman YAPICI",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Erdinç ARICI",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Eğitim Gönüllüleri Öğrenci Topluluğu"
+      },
+      "Farkındalık Atölyesi Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Fırat ALGÜL",
+        "TOPLULUK DANIŞMANI": "Öğr. Gör. Hasan ÖZÇAM",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Farkındalık Atölyesi Öğrenci Topluluğu"
+      },
+      "Field Programmable  Gate Array Öğrenci Topluluğu (FPGA)": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Anıl Ömer PARLAK",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Hasan KÜRÜM",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Field Programmable  Gate Array Öğrenci Topluluğu (FPGA)"
+      },
+      "Fizyoterapi ve Rehabilitilasyon Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/FTR Logo.png",
+        "TOPLULUK BAŞKANI": "Azad Serhat GÜNER",
+        "TOPLULUK DANIŞMANI": "Öğr. Gör. Furkan BİLEK",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Fizyoterapi ve Rehabilitilasyon Öğrenci Topluluğu"
+      },
+      "Fotoğrafçılık Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Doğukan DENİZ",
+        "TOPLULUK DANIŞMANI": "Öğr. Gör. Recep BAĞCI",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Fotoğrafçılık Öğrenci Topluluğu"
+      },
+      "Fırat Blockchain Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Onur ÇAKIR",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. İbrahim TÜRKOĞLU",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Fırat Blockchain Öğrenci Topluluğu"
+      },
+      "Fırat Elektronik ve Bilişim Teknolojileri Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Furkan POLAT",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Özal YILDIRIM",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Fırat Elektronik ve Bilişim Teknolojileri Öğrenci Topluluğu"
+      },
+      "Fırat Psiko-Sosyal Destek Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "-",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Murad ATMACA",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Fırat Psiko-Sosyal Destek Öğrenci Topluluğu"
+      },
+      "Fırat Üniversitesi Kalite Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Kalite Logo.jpeg",
+        "TOPLULUK BAŞKANI": "Oktay KAFDAĞLI",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Mehmet YILMAZ",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Fırat Üniversitesi Kalite Öğrenci Topluluğu"
+      },
+      "Fırat Üniversitesi Yapı-Tasarım Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Ahmet Fazıl ORHAN",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Ayça GÜLTEN",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Fırat Üniversitesi Yapı-Tasarım Öğrenci Topluluğu"
+      },
+      "Gastronomi Öğenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "-",
+        "TOPLULUK DANIŞMANI": "Öğr. Gör. Olcay ERTUĞRUL",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Gastronomi Öğenci Topluluğu"
+      },
+      "Geleneksel Türk Savaş Sanatları Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Türk Savaşları logo.jfif",
+        "TOPLULUK BAŞKANI": "-",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Berkay Yekta ÖZER",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Geleneksel Türk Savaş Sanatları Öğrenci Topluluğu"
+      },
+      "Genç Bakış Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Elif ERGEN",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üyesi Hasan YETİŞ",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Genç Bakış Öğrenci Topluluğu"
+      },
+      "Genç Girişimciler Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Genç Girişimciler Logo.PNG",
+        "TOPLULUK BAŞKANI": "Merve ÇAK",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü.Ayşe Esra PEKER",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Genç Girişimciler Öğrenci Topluluğu"
+      },
+      "Genç Kızılay Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Meral YAVUZ",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Hatice ERÖKSÜZ",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Genç Kızılay Öğrenci Topluluğu"
+      },
+      "Genç TEMA Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/TEMA Logo.jpg",
+        "TOPLULUK BAŞKANI": "Serpil POLAT",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. F.Gül KOÇSOY",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Genç TEMA Öğrenci Topluluğu"
+      },
+      "Genç Yeryüzü Doktorları Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Muhammed ALVAN",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üyesi Merve YILMAZ BOZOĞLAN",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Genç Yeryüzü Doktorları Öğrenci Topluluğu"
+      },
+      "Genç Yeşilay Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Ayşe Nur ASLAN",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üyesi Filiz ERSÖĞÜTÇÜ",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Genç Yeşilay Öğrenci Topluluğu"
+      },
+      "Gezi ve Turizm  Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Talip DEMİROK",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Mehmet Cengiz HAN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Gezi ve Turizm  Öğrenci Topluluğu"
+      },
+      "Google Developer Students Club Fırat University": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/GDSC Logo.jpg",
+        "TOPLULUK BAŞKANI": "Nirgül BEDİR",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Mehmet KARAKÖSE",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Google Developer Students Club Fırat University"
+      },
+      "Gök Bilmi ve Uydu Teknolojileri Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Aysun DEMİRCAN",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. İlyas SOMUNKIRAN",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Gök Bilmi ve Uydu Teknolojileri Öğrenci Topluluğu"
+      },
+      "Havacılık ve Uzay Teknolojileri Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Havacılık Logo.png",
+        "TOPLULUK BAŞKANI": "Okan SEÇİL",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. M. Tunay GENÇOĞLU",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Havacılık ve Uzay Teknolojileri Öğrenci Topluluğu"
+      },
+      "Havacılık Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Havacılık Topluluğu Logo.png",
+        "TOPLULUK BAŞKANI": "Mustafa Furkan ÖZÇELİK",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Ebru KARAKÖSE",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "Havacılık Öğrenci Topluluğu"
+      },
+      "Hayvanları Koruma Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Hayvanları Koruma Logo.jpeg",
+        "TOPLULUK BAŞKANI": "Beyza Berfin ŞENER",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Rahşan ÖZEN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Hayvanları Koruma Öğrenci Topluluğu"
+      },
+      "Huawei Geliştirici Öğrenciler Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Huawei Logo.png",
+        "TOPLULUK BAŞKANI": "Fatma Hande KARAÇA",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Fatih ÖZYURT",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Huawei Geliştirici Öğrenciler Öğrenci Topluluğu"
+      },
+      "Institute of Engineers and Everbody Else Öğrenci Topluluğu (IEEE)": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/IEEE Logo.jpg",
+        "TOPLULUK BAŞKANI": "İrfan Efe ATAGÜN",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Turgay KAYA",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Institute of Engineers and Everbody Else Öğrenci Topluluğu (IEEE)"
+      },
+      "International Veterinary Students  Association Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/IVSA.png",
+        "TOPLULUK BAŞKANI": "Ahmet Arslan YOLDAŞCAN",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Pınar TATLI SEVEN",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "International Veterinary Students  Association Öğrenci Topluluğu"
+      },
+      "Kadın ve Demokrasi Gençlik Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Zeynep KÖSE",
+        "TOPLULUK DANIŞMANI": "Doç.Dr. Yeliz POLAT",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Kadın ve Demokrasi Gençlik Öğrenci Topluluğu"
+      },
+      "Kamu Gözetimi ve Ombusdsmanlık Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Müstakim Deha IŞIK",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üyesi İsmail KAVAZ",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Kamu Gözetimi ve Ombusdsmanlık Öğrenci Topluluğu"
+      },
+      "Kayak Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Uğur ATAGÜN",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Ercan GÜR",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "Kayak Öğrenci Topluluğu"
+      },
+      "Kitap Severler Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Kitap Severler Logo.jpeg",
+        "TOPLULUK BAŞKANI": "Neslihan YILMAZ",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Birol BULUT",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Kitap Severler Öğrenci Topluluğu"
+      },
+      "Makine Mühendisliği Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Makine Logo.jpg",
+        "TOPLULUK BAŞKANI": "Ömer Faruk BARIŞ",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Nevin ÇELİK",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Makine Mühendisliği Öğrenci Topluluğu"
+      },
+      "Matematik ve Teknoloji Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "İbrahim ALTIN",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üyesi Hatice ASLAN",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Matematik ve Teknoloji Öğrenci Topluluğu"
+      },
+      "Mavera Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Mutlu YILDIRIM",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üy. Necmettin TAN",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Mavera Öğrenci Topluluğu"
+      },
+      "Medya İletişim Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Enes Burak GÖVÜTAŞ",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üy. Feridun NİZAM",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Medya İletişim Öğrenci Topluluğu"
+      },
+      "Moleküler Biyoloji ve Genetik Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Genetik logo.jpg",
+        "TOPLULUK BAŞKANI": "Berfin DOĞAN",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Eyüp BAĞCI",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Moleküler Biyoloji ve Genetik Öğrenci Topluluğu"
+      },
+      "Müzik Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Esra DAĞ",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü.Mustafa ÖZTÜRK",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Müzik Öğrenci Topluluğu"
+      },
+      "Okul Öncesi Öğretmenliği Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Okul Öncesi Logo.jpg",
+        "TOPLULUK BAŞKANI": "Elif ALUŞTEKİN",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Burcu GEZER ŞEN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Okul Öncesi Öğretmenliği Öğrenci Topluluğu"
+      },
+      "Psikoloji ve İnsan Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Yusuf UVUT",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Nusrullah OKAN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Psikoloji ve İnsan Öğrenci Topluluğu"
+      },
+      "Psikolojik Danışmanlık ve Rehberlik Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/PDR Logo.jpeg",
+        "TOPLULUK BAŞKANI": "Ecem Sena ÇELİK",
+        "TOPLULUK DANIŞMANI": "Arş.Gör. Yahya ŞAHİN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Psikolojik Danışmanlık ve Rehberlik Öğrenci Topluluğu"
+      },
+      "Radyo Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Hakan CAFRİ",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üy. Mustafa DEMİR",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Radyo Öğrenci Topluluğu"
+      },
+      "Rehber Öğretmenliği Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Rehber Logo.png",
+        "TOPLULUK BAŞKANI": "Ahmet ÖLMEZOĞLU",
+        "TOPLULUK DANIŞMANI": "Prof .Dr. H. Soner ALTUNDOĞAN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Rehber Öğretmenliği Öğrenci Topluluğu"
+      },
+      "Saha Veteriner Hekimliği Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/FUSAHAVET Logo.jpg",
+        "TOPLULUK BAŞKANI": "Sıdıka Beyza GÖKER",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Önder AYTEKİN",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Saha Veteriner Hekimliği Öğrenci Topluluğu"
+      },
+      "Sanat Tarihi Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Zeynep ŞANLI",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Korkmaz ŞEN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Sanat Tarihi Öğrenci Topluluğu"
+      },
+      "Sanat ve Kültür Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Sanat ve Kültür Logo.JPG",
+        "TOPLULUK BAŞKANI": "Barış KANDENİZ",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üy.Melike BAŞPINAR",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Sanat ve Kültür Öğrenci Topluluğu"
+      },
+      "Satranç Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Mizgin ASKAR",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Tüncay ATEŞŞAHİN",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "Satranç Öğrenci Topluluğu"
+      },
+      "Savunma Teknolojileri ve Nitelikli Mühendisler Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Yılmaz UZUN",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üyesi. Burak Tanyeri",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Savunma Teknolojileri ve Nitelikli Mühendisler Öğrenci Topluluğu"
+      },
+      "Sağlıklı Yaşam ve Genç Diyetisyenler Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Hatice YAŞAR",
+        "TOPLULUK DANIŞMANI": "Öğr. Gör. Dr. Kürşat KARGÜN",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Sağlıklı Yaşam ve Genç Diyetisyenler Öğrenci Topluluğu"
+      },
+      "Siber Güvenlik Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Siber Güvenlik Logo.png",
+        "TOPLULUK BAŞKANI": "Eren ÖNDER",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Erhan AKBAL",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Siber Güvenlik Öğrenci Topluluğu"
+      },
+      "Sinema Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Eyüphan BAŞDAŞ",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üyesi Yunus NAMAZ",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Sinema Öğrenci Topluluğu"
+      },
+      "Sosyal Ar-Ge Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Sosyal Ar-Ge Logo.jpg",
+        "TOPLULUK BAŞKANI": "Hasan ÇAĞLI",
+        "TOPLULUK DANIŞMANI": "-",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Sosyal Ar-Ge Öğrenci Topluluğu"
+      },
+      "Sosyal Bilimlerde Teknoloji ve Araştırma Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/FÜSTAT Logo.png",
+        "TOPLULUK BAŞKANI": "Ömer Faruk ENGÜZEKLİ",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Ali Sırrı YILMAZ",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Sosyal Bilimlerde Teknoloji ve Araştırma Öğrenci Topluluğu"
+      },
+      "Sosyal Hekimler Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Sosyal Hekimler Logo.png",
+        "TOPLULUK BAŞKANI": "Ahmet Ethem TATLI",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Adem GÖK",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Sosyal Hekimler Öğrenci Topluluğu"
+      },
+      "Sosyal Hizmet Etkileşim Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Etkileşim ve Farkındalık Logo.jpg",
+        "TOPLULUK BAŞKANI": "Mehmet Ali ARSLAN",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Rıfat BİLGİN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Sosyal Hizmet Etkileşim Öğrenci Topluluğu"
+      },
+      "Suffa Proje Akademi Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Nisa Nur ŞEKER",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Rahime ÇELİK",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Suffa Proje Akademi Öğrenci Topluluğu"
+      },
+      "Sınıf Eğitimi Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Sınıf Eğitimi Logo.png",
+        "TOPLULUK BAŞKANI": "Zeynep ÇOLAK",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Erdal ZENGİN",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Sınıf Eğitimi Öğrenci Topluluğu"
+      },
+      "TURKMSİC-Fırat Türk Tıp Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Muhammet Furkan YÜKSEL",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Ebru ÖNALAN",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "TURKMSİC-Fırat Türk Tıp Öğrenci Topluluğu"
+      },
+      "Tarih Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Tarkan Ömer BANKUR",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Cuma Ali YILMAZ",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Tarih Öğrenci Topluluğu"
+      },
+      "Teakwando Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Gülse POLAT",
+        "TOPLULUK DANIŞMANI": "-",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "Teakwando Öğrenci Topluluğu"
+      },
+      "Teknoloji Ar-Ge ve Girişimcilik Öğrenci Topluluğu (FÜTAG)": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/FUTAG Logo.png",
+        "TOPLULUK BAŞKANI": "Mert Ömer BAKAR",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Bilal ALATAŞ",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Teknoloji Ar-Ge ve Girişimcilik Öğrenci Topluluğu (FÜTAG)"
+      },
+      "Teknoloji Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Teknoloji Logo.jpg",
+        "TOPLULUK BAŞKANI": "Gizem KIRÇIL",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Orhan ÇAKAR",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Teknoloji Öğrenci Topluluğu"
+      },
+      "Tiyatro Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Tiyatro Logo.jpg",
+        "TOPLULUK BAŞKANI": "Hasan Furkan POLAT",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Bilgit SAĞLAM",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Tiyatro Öğrenci Topluluğu"
+      },
+      "Toplum Gönüllüleri Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Toplum Gönüllüleri Logo.jpg",
+        "TOPLULUK BAŞKANI": "Ayşenur BÖLÜKÇÜ",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Mevlüt YILMAZ",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Toplum Gönüllüleri Öğrenci Topluluğu"
+      },
+      "Türk Dünyası Araştırmaları Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Hüseyin ERDOĞAN",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. İbrahim YILMAZÇELİK",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Türk Dünyası Araştırmaları Öğrenci Topluluğu"
+      },
+      "Türk Dünyası ve İletişim Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Tural HATAMLI",
+        "TOPLULUK DANIŞMANI": "Öğr. Gör.Recep BAĞCI",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Türk Dünyası ve İletişim Öğrenci Topluluğu"
+      },
+      "Tıbbi Hizmetler ve Teknikerler Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/THT Logo.jpg",
+        "TOPLULUK BAŞKANI": "Merve BAYRAK",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Mehmet Ali ÇİÇEK",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Tıbbi Hizmetler ve Teknikerler Öğrenci Topluluğu"
+      },
+      "Uluslararası Doktorlar Birliği Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Uluslararası Tıp Logo.png",
+        "TOPLULUK BAŞKANI": "Mert Ali HOROZ",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Mehmet Ferit GÜRSU",
+        "TOPLULUK KOLU": "Sağlık",
+        "TOPLULUKLAR": "Uluslararası Doktorlar Birliği Öğrenci Topluluğu"
+      },
+      "Uluslararası Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Uluslararası Logo.jpeg",
+        "TOPLULUK BAŞKANI": "Amar HASSAN",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Yunus NAMAZ",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Uluslararası Öğrenci Topluluğu"
+      },
+      "Vetakort Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Ela Nur ELÇİ",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Ahmet ATEŞŞAHİN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Vetakort Öğrenci Topluluğu"
+      },
+      "Veteriner Öğrenci Topluluğu (FıratÜniVet)": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Vet Logo.jpg",
+        "TOPLULUK BAŞKANI": "Uğur DAĞTEKİN",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. M. Cengiz HAN",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Veteriner Öğrenci Topluluğu \n(FıratÜniVet)"
+      },
+      "Veterinerlik Bilimsel  Araştırma Yayın Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/VetBAK Logo.jpg",
+        "TOPLULUK BAŞKANI": "Enes İNANLI",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Kazım ŞAHİN",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Veterinerlik Bilimsel  Araştırma Yayın Öğrenci Topluluğu"
+      },
+      "Yabancı Dil Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/FUFOL Logo.png",
+        "TOPLULUK BAŞKANI": "Nurseza GÜÇLÜ",
+        "TOPLULUK DANIŞMANI": "Öğr. Gör. Yavuzcan DERE",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "Yabancı Dil Öğrenci Topluluğu"
+      },
+      "Yapay Zeka Görüntü İşleme ve İnovasyon Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/logo.jpg",
+        "TOPLULUK BAŞKANI": "Yunus Emre GÜMÜŞ",
+        "TOPLULUK DANIŞMANI": "Prof. Dr. Mustafa ULAŞ",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "Yapay Zeka Görüntü İşleme ve İnovasyon Öğrenci Topluluğu"
+      },
+      "Yedi Kıta Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/YEDİ KITA - Fırat Yedi Kıta Öğrenci Topluluğu.jpeg",
+        "TOPLULUK BAŞKANI": "Mehmet Salih BARMAN",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Üyesi Muhammet FIRAT",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Yedi Kıta Öğrenci Topluluğu"
+      },
+      "ultrAslan UNI Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Hüseyin ASLAN",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Dr. Murat KATAR",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "ultrAslan UNI Öğrenci Topluluğu"
+      },
+      "Çalışma Ekonomisi ve Endistri İlişkileri Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Tuana ŞEN",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Hasan UZUN",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "Çalışma Ekonomisi ve Endistri İlişkileri Öğrenci Topluluğu"
+      },
+      "Üniversiteli Gençlik 23 Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "-",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Birol AZAR",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "Üniversiteli Gençlik 23 Öğrenci Topluluğu"
+      },
+      "Üniversiteli Trabzonsporlular": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/Trabzon Spor Logo.jpg",
+        "TOPLULUK BAŞKANI": "Rafet Onur AYÇİÇEK",
+        "TOPLULUK DANIŞMANI": "Doç Dr. Selim KUL",
+        "TOPLULUK KOLU": "Spor",
+        "TOPLULUKLAR": "Üniversiteli Trabzonsporlular"
+      },
+      "İklim Değişikliği ve Sıfır Atık Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Furkan UTKU",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Dilek ARSLAN ATEŞŞAHİN",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "İklim Değişikliği ve Sıfır Atık Öğrenci Topluluğu"
+      },
+      "İktisat Öğrenci Topluluğu": {
+        "LOGO": "https://unievi.firat.edu.tr/assets/front/img/firat-logo-yeni.png",
+        "TOPLULUK BAŞKANI": "Şeydanur NAMLI",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. İzzet TAŞAR",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "İktisat Öğrenci Topluluğu"
+      },
+      "İlim ve Kültür Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "İ. Alperen BEŞİROĞLU",
+        "TOPLULUK DANIŞMANI": "Doç. Dr. Mustafa UĞRAŞ",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "İlim ve Kültür Öğrenci Topluluğu"
+      },
+      "İlmi Araştırmalar Öğrenci Topluluğu": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/İlmi Araştırmalar Logo.jpg",
+        "TOPLULUK BAŞKANI": "M. Enes DÖLEK",
+        "TOPLULUK DANIŞMANI": "Dr. Öğr. Ü. Yeliz POLAT",
+        "TOPLULUK KOLU": "Sosyal",
+        "TOPLULUKLAR": "İlmi Araştırmalar Öğrenci Topluluğu"
+      },
+      "İngiliz Dili ve Edebiyatı Araştırmaları Öğrenci Topluluğu": {
+        "LOGO": "nan",
+        "TOPLULUK BAŞKANI": "Aydanur ÖTLEGEN",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. G. Tuğçe ÇETİN",
+        "TOPLULUK KOLU": "Kültürel",
+        "TOPLULUKLAR": "İngiliz Dili ve Edebiyatı Araştırmaları Öğrenci Topluluğu"
+      },
+      "İnşaat Mühendisliği  Öğrenci Topluluğu (FİMÜ)": {
+        "LOGO": "https://sksdab.firat.edu.tr/subdomain_files/sks.dab.firat.edu.tr/photos/254/Topluluk Logoları/FİMÜ Logo.png",
+        "TOPLULUK BAŞKANI": "Hatip KARATAŞ",
+        "TOPLULUK DANIŞMANI": "Arş. Gör. Dr. Mustafa TUNÇ",
+        "TOPLULUK KOLU": "Bilimsel",
+        "TOPLULUKLAR": "İnşaat Mühendisliği  Öğrenci Topluluğu (FİMÜ)"
+      }
+    }
+}
