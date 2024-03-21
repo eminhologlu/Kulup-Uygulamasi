@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kulup/toplulukhub.dart';
 
 class ToplulukDetay extends StatefulWidget {
   @override
@@ -40,9 +41,9 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 25, 139, 28),
+      backgroundColor: const Color.fromARGB(255, 79, 93, 154),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 25, 139, 28),
+        backgroundColor: const Color.fromARGB(255, 79, 93, 154),
         leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
@@ -57,6 +58,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
           Align(
               alignment: Alignment.topCenter,
               child: CircleAvatar(
+                backgroundColor: Colors.white,
                 radius: MediaQuery.of(context).size.width * 0.17,
                 foregroundImage: toplulukLogo != "nan"
                     ? NetworkImage(toplulukLogo)
@@ -64,20 +66,20 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
                         "https://unievi.firat.edu.tr/assets/front/img/firat-logo-yeni.png"),
               )),
           SizedBox(
-            height: MediaQuery.of(context).size.width * 0.04,
+            height: MediaQuery.of(context).size.width * 0.01,
           ),
           Container(
             width: MediaQuery.of(context).size.width * 0.9,
             child: Text(
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 40, 235, 85),
                     fontFamily: "Lalezar",
                     fontSize: MediaQuery.of(context).size.width * 0.06),
                 textAlign: TextAlign.center,
                 toplulukAdi),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.width * 0.1,
+            height: MediaQuery.of(context).size.width * 0.03,
           ),
           Text(
             "Topluluk Danışmanı",
@@ -93,7 +95,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
                 fontSize: MediaQuery.of(context).size.width * 0.06),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.width * 0.06,
+            height: MediaQuery.of(context).size.width * 0.03,
           ),
           Text(
             "Topluluk Başkanı",
@@ -109,7 +111,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
                 fontSize: MediaQuery.of(context).size.width * 0.06),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.width * 0.06,
+            height: MediaQuery.of(context).size.width * 0.03,
           ),
           Text(
             "Topluluk Kolu",
@@ -128,9 +130,17 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
             height: MediaQuery.of(context).size.width * 0.08,
           ),
           FilledButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ToplulukHub(
+                        toplulukAdi: toplulukAdi,
+                      ),
+                    ));
+              },
               child: Text(
-                "Topluluğa Katıl",
+                "Topluluk Sayfasına Git",
                 style: TextStyle(
                     fontFamily: "Lalezar",
                     fontSize: MediaQuery.of(context).size.width * 0.05),
@@ -138,7 +148,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
               style: FilledButton.styleFrom(
                   backgroundColor: Colors.black,
                   fixedSize: Size(MediaQuery.of(context).size.width * 0.6,
-                      MediaQuery.of(context).size.height * 0.05)))
+                      MediaQuery.of(context).size.height * 0.05))),
         ],
       ),
     );

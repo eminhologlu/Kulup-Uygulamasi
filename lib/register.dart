@@ -11,6 +11,7 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController studentidController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController repasswordController = TextEditingController();
 
@@ -25,7 +26,10 @@ class _RegisterPageState extends State<RegisterPage> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.arrow_back_ios_new_rounded)),
+              icon: Icon(
+                Icons.arrow_back_ios_new_rounded,
+                color: Colors.white,
+              )),
           backgroundColor: Color.fromARGB(255, 25, 139, 28),
         ),
       ),
@@ -58,7 +62,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ],
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.08),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             Center(
               child: Column(
                 children: [
@@ -79,6 +83,15 @@ class _RegisterPageState extends State<RegisterPage> {
                         fontSize: MediaQuery.of(context).size.width * 0.06),
                   ),
                   buildTextField(emailController, 30, false),
+                  buildSizedBox(),
+                  Text(
+                    "Öğrenci No",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Lalezar",
+                        fontSize: MediaQuery.of(context).size.width * 0.06),
+                  ),
+                  buildTextField(studentidController, 30, false),
                   buildSizedBox(),
                   Text(
                     "Şifre",
@@ -122,7 +135,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget buildSizedBox() {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.05,
+      height: MediaQuery.of(context).size.height * 0.03,
     );
   }
 

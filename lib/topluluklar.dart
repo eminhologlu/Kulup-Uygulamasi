@@ -70,7 +70,7 @@ class _TopluluklarState extends State<Topluluklar> {
                   )),
               flexibleSpace: Container(
                 decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 25, 139, 28)),
+                    color: Color.fromARGB(255, 79, 93, 154)),
               ),
               title: TextField(
                 cursorHeight: MediaQuery.of(context).size.height * 0.02,
@@ -99,8 +99,9 @@ class _TopluluklarState extends State<Topluluklar> {
                 },
               ),
             ),
-            backgroundColor: const Color.fromARGB(255, 25, 139, 28),
+            backgroundColor: const Color.fromARGB(255, 79, 93, 154),
             body: ListView.separated(
+              shrinkWrap: true,
               padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
               itemCount: filteredTopluluklar.length,
               itemBuilder: (BuildContext context, int index) {
@@ -126,7 +127,7 @@ class _TopluluklarState extends State<Topluluklar> {
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.1,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 133, 202, 149),
                         border: Border.all(color: Colors.white),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05)),
@@ -151,6 +152,11 @@ class _TopluluklarState extends State<Topluluklar> {
                               child: Text(
                                 '${toplulukAdi}',
                                 overflow: TextOverflow.visible,
+                                style: TextStyle(
+                                    fontFamily: "Lalezar",
+                                    fontSize:
+                                        MediaQuery.of(context).size.width *
+                                            0.045),
                               ),
                             ),
                           ),
@@ -161,7 +167,9 @@ class _TopluluklarState extends State<Topluluklar> {
                 );
               },
               separatorBuilder: (BuildContext context, int index) =>
-                  const Divider(),
+                  const Divider(
+                color: Colors.transparent,
+              ),
             )),
       ),
     );
