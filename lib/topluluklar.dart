@@ -125,7 +125,7 @@ class _TopluluklarState extends State<Topluluklar> {
                         ));
                   },
                   child: Container(
-                    height: MediaQuery.of(context).size.height * 0.1,
+                    height: MediaQuery.of(context).size.height * 0.115,
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 133, 202, 149),
                         border: Border.all(color: Colors.white),
@@ -149,14 +149,16 @@ class _TopluluklarState extends State<Topluluklar> {
                                 left: MediaQuery.of(context).size.width * 0.03),
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.65,
-                              child: Text(
-                                '${toplulukAdi}',
-                                overflow: TextOverflow.visible,
-                                style: TextStyle(
-                                    fontFamily: "Lalezar",
-                                    fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.045),
+                              child: SingleChildScrollView(
+                                child: Text(
+                                  '${toplulukAdi}',
+                                  overflow: TextOverflow.visible,
+                                  style: TextStyle(
+                                      fontFamily: "Lalezar",
+                                      fontSize:
+                                          MediaQuery.of(context).size.width *
+                                              0.045),
+                                ),
                               ),
                             ),
                           ),

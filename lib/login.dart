@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kulup/anasayfa.dart';
 import 'package:kulup/register.dart';
+import 'package:kulup/services/user_auth.dart';
+import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -19,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 25, 139, 28),
+        backgroundColor: const Color.fromARGB(255, 25, 139, 28),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -37,15 +39,13 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    child: Text(
-                      "Hoş geldin!",
-                      style: TextStyle(
-                        height: MediaQuery.of(context).size.width * 0.0001,
-                        fontFamily: "Lalezar",
-                        fontSize: MediaQuery.of(context).size.width * 0.12,
-                        color: Colors.white,
-                      ),
+                  Text(
+                    "Hoş geldin!",
+                    style: TextStyle(
+                      height: MediaQuery.of(context).size.width * 0.0001,
+                      fontFamily: "Lalezar",
+                      fontSize: MediaQuery.of(context).size.width * 0.12,
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -151,25 +151,44 @@ class _LoginPageState extends State<LoginPage> {
                       height: MediaQuery.of(context).size.height * 0.07,
                     ),
                     FilledButton(
-                        onPressed: () {
+                      onPressed: () async {
+                        if (usernameController.text.isEmpty ||
+                            passwordController.text.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            backgroundColor:
+                                const Color.fromARGB(255, 79, 93, 154),
+                            content: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Kullanıcı adı ve şifreni girmeyi unuttun.",
+                                style: TextStyle(
+                                    fontFamily: "Lalezar",
+                                    fontSize:
+                                        MediaQuery.of(context).size.width *
+                                            0.05),
+                              ),
+                            ),
+                          ));
+                        } else if (await doUserLogin()) {
                           Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(builder: (context) => Anasayfa()),
                             (Route<dynamic> route) => false,
                           );
-                        },
-                        child: Text(
-                          "Giriş Yap",
-                          style: TextStyle(
-                              fontFamily: "Lalezar",
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.05),
-                        ),
-                        style: FilledButton.styleFrom(
-                            backgroundColor: Colors.black,
-                            fixedSize: Size(
-                                MediaQuery.of(context).size.width * 0.7,
-                                MediaQuery.of(context).size.height * 0.05)))
+                        }
+                      },
+                      style: FilledButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          fixedSize: Size(
+                              MediaQuery.of(context).size.width * 0.7,
+                              MediaQuery.of(context).size.height * 0.05)),
+                      child: Text(
+                        "Giriş Yap",
+                        style: TextStyle(
+                            fontFamily: "Lalezar",
+                            fontSize: MediaQuery.of(context).size.width * 0.05),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -210,5 +229,19 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  Future<bool> doUserLogin() async {
+    final username = usernameController.text.trim();
+    final password = passwordController.text.trim();
+    final user = ParseUser(username, password, null);
+    var response = await user.login();
+    if (response.success) {
+      Auth().showSuccessL(context);
+      return true;
+    } else {
+      Auth().showError(context, response.error!.message);
+      return false;
+    }
   }
 }

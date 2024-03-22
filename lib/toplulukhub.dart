@@ -2,23 +2,65 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kulup/duyuru.dart';
+import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
 class ToplulukHub extends StatefulWidget {
-  const ToplulukHub({
-    required this.toplulukAdi,
-  });
+  const ToplulukHub({required this.toplulukAdi, required this.toplulukLogo});
   final String toplulukAdi;
+  final String toplulukLogo;
 
   @override
   State<ToplulukHub> createState() => _ToplulukHubState();
 }
 
+class Announcement {
+  final String title;
+  final String content;
+  final DateTime date;
+
+  Announcement(
+      {required this.title, required this.content, required this.date});
+
+  factory Announcement.fromParseObject(ParseObject object) {
+    return Announcement(
+      title: object.get('duyurubaslik') ?? '',
+      content: object.get('duyurutext') ?? '',
+      date: object.get<DateTime>('duyurutarih') ?? DateTime.now(),
+    );
+  }
+}
+
+DateTime parseDateTime(String dateString) {
+  return DateTime.parse(dateString);
+}
+
 class _ToplulukHubState extends State<ToplulukHub> {
+  List<Announcement> announcements = [];
+
+  Future<void> _fetchAnnouncements(String communityName) async {
+    final queryBuilder = QueryBuilder(ParseObject('Duyurular'))
+      ..whereEqualTo('toplulukadi', communityName);
+
+    final response = await queryBuilder.query();
+
+    if (response.success && response.results != null) {
+      setState(() {
+        announcements = response.results!
+            .map((result) => Announcement.fromParseObject(result))
+            .toList();
+      });
+    }
+  }
+
   late String toplulukAdi;
+  late String toplulukLogo;
   @override
   void initState() {
     super.initState();
     toplulukAdi = widget.toplulukAdi;
+    toplulukLogo = widget.toplulukLogo;
+    _fetchAnnouncements(toplulukAdi);
   }
 
   @override
@@ -117,10 +159,21 @@ class _ToplulukHubState extends State<ToplulukHub> {
               ListView.separated(
                 padding:
                     EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
-                itemCount: 10,
+                itemCount: announcements.length,
                 itemBuilder: (BuildContext context, int index) {
+                  final announcement = announcements[index];
                   return GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Duyuru(
+                              duyurubaslik: announcement.title,
+                              duyurutext: announcement.content,
+                              toplulukLogo: toplulukLogo,
+                            ),
+                          ));
+                    },
                     child: Column(
                       children: [
                         Container(
@@ -138,8 +191,12 @@ class _ToplulukHubState extends State<ToplulukHub> {
                             child: Row(
                               children: [
                                 CircleAvatar(
+                                  foregroundImage: toplulukLogo != "nan"
+                                      ? NetworkImage(toplulukLogo)
+                                      : const NetworkImage(
+                                          "https://unievi.firat.edu.tr/assets/front/img/firat-logo-yeni.png"),
                                   backgroundColor:
-                                      const Color.fromARGB(255, 0, 0, 0),
+                                      Color.fromARGB(255, 255, 255, 255),
                                   radius:
                                       MediaQuery.of(context).size.width * 0.09,
                                 ),
@@ -156,7 +213,7 @@ class _ToplulukHubState extends State<ToplulukHub> {
                                       alignment: Alignment.centerLeft,
                                       child: SingleChildScrollView(
                                         child: Text(
-                                          'Yönetim Hk. Yönetim Hk. Yönetim Hk. Yönetim Hk. Yönetim Hk. Yönetim Hk. Yönetim Hk.',
+                                          announcement.title,
                                           style: TextStyle(
                                               fontFamily: "Lalezar",
                                               fontSize: MediaQuery.of(context)
@@ -179,7 +236,8 @@ class _ToplulukHubState extends State<ToplulukHub> {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                "24.01.2024",
+                                textAlign: TextAlign.center,
+                                announcement.date.toString(),
                                 style: TextStyle(
                                     color: Colors.white, fontFamily: "Lalezar"),
                               ),

@@ -136,6 +136,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
                     MaterialPageRoute(
                       builder: (context) => ToplulukHub(
                         toplulukAdi: toplulukAdi,
+                        toplulukLogo: toplulukLogo,
                       ),
                     ));
               },

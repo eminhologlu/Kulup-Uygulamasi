@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kulup/services/user_auth.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -26,14 +27,14 @@ class _RegisterPageState extends State<RegisterPage> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_ios_new_rounded,
                 color: Colors.white,
               )),
-          backgroundColor: Color.fromARGB(255, 25, 139, 28),
+          backgroundColor: const Color.fromARGB(255, 25, 139, 28),
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 25, 139, 28),
+      backgroundColor: const Color.fromARGB(255, 25, 139, 28),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,15 +50,13 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Colors.white,
                   ),
                 ),
-                Container(
-                  child: Text(
-                    "Kaydol!",
-                    style: TextStyle(
-                      height: MediaQuery.of(context).size.width * 0.0001,
-                      fontFamily: "Lalezar",
-                      fontSize: MediaQuery.of(context).size.width * 0.12,
-                      color: Colors.white,
-                    ),
+                Text(
+                  "Kaydol!",
+                  style: TextStyle(
+                    height: MediaQuery.of(context).size.width * 0.0001,
+                    fontFamily: "Lalezar",
+                    fontSize: MediaQuery.of(context).size.width * 0.12,
+                    color: Colors.white,
                   ),
                 ),
               ],
@@ -112,18 +111,62 @@ class _RegisterPageState extends State<RegisterPage> {
                   buildTextField(repasswordController, 20, true),
                   buildSizedBox(),
                   FilledButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Kayıt Ol",
-                        style: TextStyle(
-                            fontFamily: "Lalezar",
-                            fontSize: MediaQuery.of(context).size.width * 0.05),
-                      ),
-                      style: FilledButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          fixedSize: Size(
-                              MediaQuery.of(context).size.width * 0.7,
-                              MediaQuery.of(context).size.height * 0.05)))
+                    onPressed: () async {
+                      if (usernameController.text.isEmpty |
+                          emailController.text.isEmpty |
+                          studentidController.text.isEmpty |
+                          passwordController.text.isEmpty |
+                          repasswordController.text.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          backgroundColor:
+                              const Color.fromARGB(255, 79, 93, 154),
+                          content: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Bütün bilgileri eksiksiz doldurmalısın.",
+                              style: TextStyle(
+                                  fontFamily: "Lalezar",
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.05),
+                            ),
+                          ),
+                        ));
+                      } else if (passwordController.text !=
+                          repasswordController.text) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          backgroundColor:
+                              const Color.fromARGB(255, 79, 93, 154),
+                          content: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Şifreler uyuşmuyor.",
+                              style: TextStyle(
+                                  fontFamily: "Lalezar",
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.05),
+                            ),
+                          ),
+                        ));
+                      } else if (await Auth().doUserRegistration(
+                          context,
+                          usernameController.text.trim(),
+                          emailController.text.trim(),
+                          passwordController.text.trim())) {
+                        Auth().showSuccess(context);
+                        Navigator.pop(context);
+                      }
+                    },
+                    style: FilledButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        fixedSize: Size(MediaQuery.of(context).size.width * 0.7,
+                            MediaQuery.of(context).size.height * 0.05)),
+                    child: Text(
+                      "Kayıt Ol",
+                      style: TextStyle(
+                          fontFamily: "Lalezar",
+                          fontSize: MediaQuery.of(context).size.width * 0.05),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -131,6 +174,14 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       ),
     );
+  }
+
+  void clearControllers() {
+    usernameController.clear();
+    emailController.clear();
+    studentidController.clear();
+    passwordController.clear();
+    repasswordController.clear();
   }
 
   Widget buildSizedBox() {

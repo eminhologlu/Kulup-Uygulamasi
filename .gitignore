@@ -49,3 +49,4 @@ ios/Runner.xcodeproj/project.pbxproj
 ios/Runner.xcodeproj/project.pbxproj
 ios/Runner.xcodeproj/project.pbxproj
 lib/firebase_options.dart
+lib/.env

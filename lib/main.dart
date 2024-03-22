@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kulup/loading.dart';
 import 'package:kulup/login.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
 Future<void> main() async {
+  await dotenv.load(fileName: "lib/.env");
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  final keyApplicationId = dotenv.env['KEY_APP_ID'].toString();
+  final keyClientKey = dotenv.env['KEY_CLIENT'].toString();
+  final keyParseServerUrl = 'https://parseapi.back4app.com';
+
+  await Parse().initialize(keyApplicationId, keyParseServerUrl,
+      clientKey: keyClientKey, autoSendSessionId: true);
   runApp(const MyApp());
 }
 
