@@ -32,6 +32,7 @@ class _TopluluklarState extends State<Topluluklar> {
             'danisman': result.get<String>('danisman') ?? '',
             'baskan': result.get<String>('baskan') ?? '',
             'toplulukadi': result.get<String>('toplulukadi') ?? '',
+            'kolu': result.get<String>('kolu') ?? '',
           };
         }).toList();
         filteredTopluluklar = List.from(topluluklar);
