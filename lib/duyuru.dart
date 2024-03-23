@@ -64,18 +64,19 @@ class _DuyuruState extends State<Duyuru> {
                   top: MediaQuery.of(context).size.height * 0.01),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 149, 205, 115),
+                  color: Color.fromARGB(255, 216, 245, 135),
                   borderRadius: BorderRadius.circular(
                       MediaQuery.of(context).size.width * 0.03),
                 ),
                 height: MediaQuery.of(context).size.height * 0.69,
-                width: MediaQuery.of(context).size.width * 0.9,
+                width: MediaQuery.of(context).size.width * 0.96,
                 child: Padding(
                   padding:
                       EdgeInsets.all(MediaQuery.of(context).size.width * 0.01),
                   child: SingleChildScrollView(
                     child: Text(
                       duyurutext,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: "Lalezar",
                           fontSize: MediaQuery.of(context).size.width * 0.04),

@@ -72,7 +72,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
             width: MediaQuery.of(context).size.width * 0.9,
             child: Text(
                 style: TextStyle(
-                    color: Color.fromARGB(255, 40, 235, 85),
+                    color: Color.fromARGB(255, 216, 245, 135),
                     fontFamily: "Lalezar",
                     fontSize: MediaQuery.of(context).size.width * 0.06),
                 textAlign: TextAlign.center,

@@ -128,7 +128,8 @@ class _TopluluklarState extends State<Topluluklar> {
                     height: MediaQuery.of(context).size.height * 0.115,
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 133, 202, 149),
-                        border: Border.all(color: Colors.white),
+                        border: Border.all(
+                            color: Color.fromARGB(255, 133, 202, 149)),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05)),
                     child: Padding(

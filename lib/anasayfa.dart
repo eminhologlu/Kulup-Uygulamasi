@@ -14,46 +14,50 @@ class _AnasayfaState extends State<Anasayfa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 25, 139, 28),
+      backgroundColor: const Color.fromARGB(255, 79, 93, 154),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height*0.13),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.13),
             GestureDetector(
-              onTap: () {
-                Navigator.push(
+                onTap: () {
+                  Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const Topluluklar()));
-              },
-              child: buildContainer("Öğrenci Toplulukları")),
-            SizedBox(height: MediaQuery.of(context).size.height*0.05),
+                },
+                child: buildContainer("Öğrenci Toplulukları")),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             GestureDetector(
-              onTap: () {},
-              child: buildContainer("Üyesi Olduğun Topluluklar")),
-            SizedBox(height: MediaQuery.of(context).size.height*0.05),
+                onTap: () {},
+                child: buildContainer("Üyesi Olduğun Topluluklar")),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             GestureDetector(
-              onTap: () {},
-              child: buildContainer("Yönetici Olduğun Topluluklar")),
-            SizedBox(height: MediaQuery.of(context).size.height*0.05),
-            GestureDetector(
-              onTap: () {},
-              child: buildContainer("Ayarlar")),
+                onTap: () {},
+                child: buildContainer("Yönetici Olduğun Topluluklar")),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+            GestureDetector(onTap: () {}, child: buildContainer("Ayarlar")),
           ],
         ),
       ),
     );
   }
 
-Widget buildContainer(String text){
-  return Container(
-    child: Center(child: Text(text,style: TextStyle(fontSize: MediaQuery.of(context).size.width*0.05, fontFamily: "Lalezar", color: Colors.white),)),
-              height: MediaQuery.of(context).size.height*0.15,
-              width: MediaQuery.of(context).size.width*0.7,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width*0.05),
-                color: Colors.black
-              ));
-}
-
+  Widget buildContainer(String text) {
+    return Container(
+        child: Center(
+            child: Text(
+          text,
+          style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.05,
+              fontFamily: "Lalezar",
+              color: Colors.white),
+        )),
+        height: MediaQuery.of(context).size.height * 0.15,
+        width: MediaQuery.of(context).size.width * 0.7,
+        decoration: BoxDecoration(
+            borderRadius:
+                BorderRadius.circular(MediaQuery.of(context).size.width * 0.05),
+            color: Colors.black));
+  }
 }
