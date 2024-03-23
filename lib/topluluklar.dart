@@ -1,7 +1,6 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:kulup/toplulukdetay.dart';
+import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
 class Topluluklar extends StatefulWidget {
   const Topluluklar({super.key});
@@ -11,42 +10,44 @@ class Topluluklar extends StatefulWidget {
 }
 
 class _TopluluklarState extends State<Topluluklar> {
-  late List<String> topluluklar = [];
-  late Map<String, String> logolar = {};
-  late Map<String, String> danismanlar = {};
-  late Map<String, String> baskanlar = {};
-  late Map<String, String> kollar = {};
-  late List<String> filteredTopluluklar = [];
+  List<Map<String, String>> topluluklar = [];
+  List<Map<String, String>> filteredTopluluklar = [];
 
   @override
   void initState() {
     super.initState();
-    _loadTopluluklar();
+    _fetchTopluluklar();
   }
 
-  Future<void> _loadTopluluklar() async {
-    String jsonString =
-        await rootBundle.loadString('assets/json/topluluklar.json');
-    Map<String, dynamic> data = json.decode(jsonString);
-    List<String> topluluklarList = [];
-    Map<String, String> logolarMap = {};
-    Map<String, String> danismanMap = {};
-    Map<String, String> baskanMap = {};
-    Map<String, String> kolMap = {};
-    data['Sayfa1'].forEach((key, value) {
-      topluluklarList.add(value['TOPLULUKLAR']);
-      logolarMap[value['TOPLULUKLAR']] = value['LOGO'];
-      danismanMap[value['TOPLULUKLAR']] = value['TOPLULUK DANIŞMANI'];
-      baskanMap[value['TOPLULUKLAR']] = value['TOPLULUK BAŞKANI'];
-      kolMap[value['TOPLULUKLAR']] = value['TOPLULUK KOLU'];
-    });
+  Future<void> _fetchTopluluklar() async {
+    // Topluluklar koleksiyonundan verileri çekme
+    final query = QueryBuilder(ParseObject('Topluluklar'));
+    final response = await query.query();
+
+    if (response.success && response.results != null) {
+      setState(() {
+        topluluklar = response.results!.map<Map<String, String>>((result) {
+          return {
+            'logo': result.get<String>('logo') ?? '',
+            'danisman': result.get<String>('danisman') ?? '',
+            'baskan': result.get<String>('baskan') ?? '',
+            'toplulukadi': result.get<String>('toplulukadi') ?? '',
+          };
+        }).toList();
+        filteredTopluluklar = List.from(topluluklar);
+      });
+    } else {
+      print('Topluluklar çekilemedi: ${response.error?.message}');
+    }
+  }
+
+  void _filterTopluluklar(String searchText) {
     setState(() {
-      topluluklar = topluluklarList;
-      logolar = logolarMap;
-      danismanlar = danismanMap;
-      baskanlar = baskanMap;
-      kollar = kolMap;
-      filteredTopluluklar = topluluklar;
+      filteredTopluluklar = topluluklar
+          .where((topluluk) => topluluk['toplulukadi']!
+              .toLowerCase()
+              .contains(searchText.toLowerCase()))
+          .toList();
     });
   }
 
@@ -92,11 +93,7 @@ class _TopluluklarState extends State<Topluluklar> {
                           MediaQuery.of(context).size.height * 0.00000000001),
                   border: InputBorder.none,
                 ),
-                onChanged: (value) {
-                  setState(() {
-                    filteredTopluluklar = _filterTopluluklar(value);
-                  });
-                },
+                onChanged: _filterTopluluklar,
               ),
             ),
             backgroundColor: const Color.fromARGB(255, 79, 93, 154),
@@ -105,18 +102,19 @@ class _TopluluklarState extends State<Topluluklar> {
               padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
               itemCount: filteredTopluluklar.length,
               itemBuilder: (BuildContext context, int index) {
-                final toplulukAdi = filteredTopluluklar[index];
-                String? logoURL = logolar[toplulukAdi];
-                String? danisman = danismanlar[toplulukAdi];
-                String? baskan = baskanlar[toplulukAdi];
-                String? kol = kollar[toplulukAdi];
+                final topluluk = filteredTopluluklar[index];
+                String? toplulukAdi = topluluk['toplulukadi'];
+                String? logoURL = topluluk['logo'];
+                String? danisman = topluluk['danisman'];
+                String? baskan = topluluk['baskan'];
+                String? kol = topluluk['kolu'];
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ToplulukDetay(
-                            toplulukAdi: toplulukAdi,
+                            toplulukAdi: toplulukAdi ?? "",
                             toplulukDanismani: danisman ?? "",
                             toplulukBaskani: baskan ?? "",
                             toplulukKolu: kol ?? "",
@@ -127,9 +125,9 @@ class _TopluluklarState extends State<Topluluklar> {
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.115,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 133, 202, 149),
+                        color: const Color.fromARGB(255, 133, 202, 149),
                         border: Border.all(
-                            color: Color.fromARGB(255, 133, 202, 149)),
+                            color: const Color.fromARGB(255, 133, 202, 149)),
                         borderRadius: BorderRadius.circular(
                             MediaQuery.of(context).size.width * 0.05)),
                     child: Padding(
@@ -140,7 +138,7 @@ class _TopluluklarState extends State<Topluluklar> {
                           CircleAvatar(
                             foregroundImage: logoURL != null && logoURL != "nan"
                                 ? NetworkImage(logoURL)
-                                : NetworkImage(
+                                : const NetworkImage(
                                     "https://unievi.firat.edu.tr/assets/front/img/firat-logo-yeni.png"),
                             backgroundColor: Colors.white,
                             radius: MediaQuery.of(context).size.width * 0.085,
@@ -148,11 +146,11 @@ class _TopluluklarState extends State<Topluluklar> {
                           Padding(
                             padding: EdgeInsets.only(
                                 left: MediaQuery.of(context).size.width * 0.03),
-                            child: Container(
+                            child: SizedBox(
                               width: MediaQuery.of(context).size.width * 0.65,
                               child: SingleChildScrollView(
                                 child: Text(
-                                  '${toplulukAdi}',
+                                  '$toplulukAdi',
                                   overflow: TextOverflow.visible,
                                   style: TextStyle(
                                       fontFamily: "Lalezar",
@@ -176,12 +174,5 @@ class _TopluluklarState extends State<Topluluklar> {
             )),
       ),
     );
-  }
-
-  List<String> _filterTopluluklar(String query) {
-    query = query.toLowerCase();
-    return topluluklar
-        .where((toplulukAdi) => toplulukAdi.toLowerCase().contains(query))
-        .toList();
   }
 }

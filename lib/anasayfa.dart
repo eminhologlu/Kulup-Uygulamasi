@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kulup/topluluklar.dart';
+import 'package:kulup/uyelikler.dart';
 
 class Anasayfa extends StatefulWidget {
   const Anasayfa({super.key});
@@ -29,7 +30,12 @@ class _AnasayfaState extends State<Anasayfa> {
                 child: buildContainer("Öğrenci Toplulukları")),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Uyelikler()));
+                },
                 child: buildContainer("Üyesi Olduğun Topluluklar")),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             GestureDetector(

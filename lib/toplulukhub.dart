@@ -106,7 +106,7 @@ class _ToplulukHubState extends State<ToplulukHub> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        initialIndex: 1,
+        initialIndex: 0,
         length: 3,
         child: Scaffold(
           backgroundColor: const Color.fromARGB(255, 79, 93, 154),
@@ -361,7 +361,7 @@ class _ToplulukHubState extends State<ToplulukHub> {
                             children: [
                               Container(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.3,
+                                    MediaQuery.of(context).size.height * 0.25,
                                 decoration: BoxDecoration(
                                     color: const Color.fromARGB(
                                         255, 133, 202, 149),
@@ -384,8 +384,8 @@ class _ToplulukHubState extends State<ToplulukHub> {
                                           overflow: TextOverflow.fade,
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
-                                              color: const Color.fromARGB(
-                                                  255, 79, 93, 154),
+                                              color:
+                                                  Color.fromARGB(255, 0, 0, 0),
                                               fontFamily: "Lalezar",
                                               fontSize: MediaQuery.of(context)
                                                       .size
@@ -419,6 +419,8 @@ class _ToplulukHubState extends State<ToplulukHub> {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                               fontFamily: "Lalezar",
+                                              color: const Color.fromARGB(
+                                                  255, 242, 227, 90),
                                               fontSize: MediaQuery.of(context)
                                                       .size
                                                       .width *
@@ -440,6 +442,8 @@ class _ToplulukHubState extends State<ToplulukHub> {
                                         dateFormat.format(event.date),
                                         style: TextStyle(
                                             fontFamily: "Lalezar",
+                                            color: const Color.fromARGB(
+                                                255, 242, 227, 90),
                                             fontSize: MediaQuery.of(context)
                                                     .size
                                                     .width *
@@ -462,47 +466,16 @@ class _ToplulukHubState extends State<ToplulukHub> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontFamily: "Lalezar",
+                                            color: const Color.fromARGB(
+                                                255, 242, 227, 90),
                                             fontSize: MediaQuery.of(context)
                                                     .size
                                                     .width *
                                                 0.05),
                                       ),
-                                      SizedBox(
-                                        height:
-                                            MediaQuery.of(context).size.width *
-                                                0.03,
-                                      ),
-                                      GestureDetector(
-                                        onTap: () {},
-                                        child: Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.9,
-                                          child: Text(
-                                            'Detaylar için tıkla.',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: const Color.fromARGB(
-                                                    255, 255, 255, 255),
-                                                decoration:
-                                                    TextDecoration.underline,
-                                                decorationColor: Colors.white,
-                                                fontFamily: "Lalezar",
-                                                fontSize: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.05),
-                                          ),
-                                        ),
-                                      ),
                                     ],
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.width * 0.02,
                               ),
                             ],
                           ),

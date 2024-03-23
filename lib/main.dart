@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:kulup/loading.dart';
 import 'package:kulup/login.dart';
+import 'package:kulup/uyelikler.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
 Future<void> main() async {

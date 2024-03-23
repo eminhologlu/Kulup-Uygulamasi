@@ -64,7 +64,7 @@ class _DuyuruState extends State<Duyuru> {
                   top: MediaQuery.of(context).size.height * 0.01),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 216, 245, 135),
+                  color: Color.fromARGB(255, 133, 202, 149),
                   borderRadius: BorderRadius.circular(
                       MediaQuery.of(context).size.width * 0.03),
                 ),
