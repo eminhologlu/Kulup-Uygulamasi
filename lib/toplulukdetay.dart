@@ -130,26 +130,27 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
             height: MediaQuery.of(context).size.width * 0.08,
           ),
           FilledButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ToplulukHub(
-                        toplulukAdi: toplulukAdi,
-                        toplulukLogo: toplulukLogo,
-                      ),
-                    ));
-              },
-              child: Text(
-                "Topluluk Sayfasına Git",
-                style: TextStyle(
-                    fontFamily: "Lalezar",
-                    fontSize: MediaQuery.of(context).size.width * 0.05),
-              ),
-              style: FilledButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  fixedSize: Size(MediaQuery.of(context).size.width * 0.6,
-                      MediaQuery.of(context).size.height * 0.05))),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ToplulukHub(
+                      toplulukAdi: toplulukAdi,
+                      toplulukLogo: toplulukLogo,
+                    ),
+                  ));
+            },
+            style: FilledButton.styleFrom(
+                backgroundColor: Colors.black,
+                fixedSize: Size(MediaQuery.of(context).size.width * 0.6,
+                    MediaQuery.of(context).size.height * 0.05)),
+            child: Text(
+              "Topluluk Sayfasına Git",
+              style: TextStyle(
+                  fontFamily: "Lalezar",
+                  fontSize: MediaQuery.of(context).size.width * 0.05),
+            ),
+          ),
         ],
       ),
     );
