@@ -19,12 +19,17 @@ class Announcement {
   final String title;
   final String content;
   final DateTime date;
+  final String objectId;
 
   Announcement(
-      {required this.title, required this.content, required this.date});
+      {required this.title,
+      required this.content,
+      required this.date,
+      required this.objectId});
 
   factory Announcement.fromParseObject(ParseObject object) {
     return Announcement(
+      objectId: object.get("objectId"),
       title: object.get('duyurubaslik') ?? '',
       content: object.get('duyurutext') ?? '',
       date: object.get<DateTime>('duyurutarih') ?? DateTime.now(),
@@ -37,15 +42,18 @@ class Event {
   final String content;
   final DateTime date;
   final String location;
+  final String objectId;
 
   Event(
       {required this.title,
       required this.content,
       required this.date,
-      required this.location});
+      required this.location,
+      required this.objectId});
 
   factory Event.fromParseObject(ParseObject object) {
     return Event(
+      objectId: object.get('objectId'),
       title: object.get('etkinlikbasligi') ?? '',
       content: object.get('etkinlikaciklama') ?? '',
       date: object.get<DateTime>('etkinliktarih') ?? DateTime.now(),
@@ -178,7 +186,7 @@ class _ToplulukHubState extends State<ToplulukHub> {
                     overflow: TextOverflow.fade,
                     color: Colors.white,
                     fontFamily: "Lalezar",
-                    fontSize: MediaQuery.of(context).size.width * 0.06),
+                    fontSize: MediaQuery.of(context).size.width * 0.05),
               ),
             ),
             backgroundColor: const Color.fromARGB(255, 79, 93, 154),
@@ -186,7 +194,7 @@ class _ToplulukHubState extends State<ToplulukHub> {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_back_ios_new_rounded,
                 color: Colors.white,
               ),
@@ -329,7 +337,7 @@ class _ToplulukHubState extends State<ToplulukHub> {
                       },
                       separatorBuilder: (BuildContext context, int index) =>
                           const Divider(
-                        color: Color.fromARGB(255, 25, 139, 28),
+                        color: Color.fromARGB(255, 79, 93, 154),
                       ),
                     )
                   : Padding(

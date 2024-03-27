@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:kulup/toplulukhub.dart';
 
 class ToplulukDetay extends StatefulWidget {
@@ -13,6 +11,7 @@ class ToplulukDetay extends StatefulWidget {
   final String toplulukLogo;
 
   const ToplulukDetay({
+    super.key,
     required this.toplulukAdi,
     required this.toplulukBaskani,
     required this.toplulukDanismani,
@@ -68,11 +67,11 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
           SizedBox(
             height: MediaQuery.of(context).size.width * 0.01,
           ),
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: Text(
                 style: TextStyle(
-                    color: Color.fromARGB(255, 216, 245, 135),
+                    color: const Color.fromARGB(255, 216, 245, 135),
                     fontFamily: "Lalezar",
                     fontSize: MediaQuery.of(context).size.width * 0.06),
                 textAlign: TextAlign.center,

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:kulup/toplulukhub.dart';
-import 'package:kulup/topluluklar.dart';
+import 'package:kulup/yonetimislemleri.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
-class Uyelikler extends StatefulWidget {
-  const Uyelikler({super.key});
+class KulupYonetim extends StatefulWidget {
+  const KulupYonetim({super.key});
 
   @override
-  State<Uyelikler> createState() => _UyeliklerState();
+  State<KulupYonetim> createState() => _KulupYonetimState();
 }
 
-class _UyeliklerState extends State<Uyelikler> {
+class _KulupYonetimState extends State<KulupYonetim> {
   List<Map<String, dynamic>> topluluklar = [];
 
   @override
@@ -20,48 +19,34 @@ class _UyeliklerState extends State<Uyelikler> {
   }
 
   Future<void> _fetchTopluluklar() async {
-    // Kullanıcının üyeliklerini çekmek için Uyelikler tablosundan sorgu oluştur
-    final ParseUser user = await ParseUser.currentUser() as ParseUser;
-    final ParseObject memberships = ParseObject('Uyelikler');
-    final QueryBuilder<ParseObject> query =
-        QueryBuilder<ParseObject>(memberships);
-    query.whereEqualTo('username', user.username);
+    // Kullanıcının uyelikler sütunundan topluluk adlarını çekme
+    final user = await ParseUser.currentUser() as ParseUser;
+    final uyelikler = user.get<List>('yoneticilikler');
 
-    try {
-      final ParseResponse response = await query.query();
+    if (uyelikler != null) {
+      final List<Map<String, dynamic>> topluluklarWithLogos = [];
 
-      if (response.success && response.results != null) {
-        final List<dynamic> uyelikler =
-            response.results!.first.get<List>('uyelikler') ?? [];
-        final List<Map<String, dynamic>> topluluklarWithLogos = [];
+      // Her bir topluluk adı için logo bilgisini al
+      for (final toplulukAdi in uyelikler) {
+        final query = QueryBuilder(ParseObject('Topluluklar'))
+          ..whereEqualTo('toplulukadi', toplulukAdi);
+        final response = await query.query();
 
-        // Her bir topluluk adı için logo bilgisini al
-        for (final toplulukAdi in uyelikler) {
-          final QueryBuilder<ParseObject> toplulukQuery =
-              QueryBuilder<ParseObject>(ParseObject('Topluluklar'));
-          toplulukQuery.whereEqualTo('toplulukadi', toplulukAdi);
-          final ParseResponse toplulukResponse = await toplulukQuery.query();
+        if (response.success && response.results != null) {
+          final result = response.results!.first;
+          final logo = result.get<String>('logo');
 
-          if (toplulukResponse.success && toplulukResponse.results != null) {
-            final ParseObject result = toplulukResponse.results!.first;
-            final String? logo = result.get<String>('logo');
-
-            // Topluluk adı ve logo bilgisini bir harita olarak ekle
-            topluluklarWithLogos.add({
-              'toplulukadi': toplulukAdi,
-              'logo': logo,
-            });
-          }
+          // Topluluk adı ve logo bilgisini bir harita olarak ekle
+          topluluklarWithLogos.add({
+            'toplulukadi': toplulukAdi,
+            'logo': logo,
+          });
         }
-
-        setState(() {
-          topluluklar = topluluklarWithLogos;
-        });
-      } else {
-        print('Kullanıcı bulunamadı veya üyelikler alınamadı');
       }
-    } catch (e) {
-      print('Hata: $e');
+
+      setState(() {
+        topluluklar = topluluklarWithLogos.cast<Map<String, dynamic>>();
+      });
     }
   }
 
@@ -74,7 +59,7 @@ class _UyeliklerState extends State<Uyelikler> {
         child: Scaffold(
             appBar: AppBar(
               title: Text(
-                "Topluluklarım",
+                "Yönetim",
                 style: TextStyle(
                     fontFamily: "Lalezar",
                     fontSize: MediaQuery.of(context).size.width * 0.07,
@@ -92,48 +77,19 @@ class _UyeliklerState extends State<Uyelikler> {
             ),
             backgroundColor: const Color.fromARGB(255, 79, 93, 154),
             body: topluluklar.isEmpty
-                ? Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.width * 0.1),
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: Text(
-                            'Henüz bir topluluğa üye değilsin.',
-                            style: TextStyle(
-                                fontFamily: "Lalezar",
-                                color: Colors.white,
-                                fontSize:
-                                    MediaQuery.of(context).size.width * 0.05),
-                          ),
-                        ),
+                ? Padding(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.width * 0.1),
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Text(
+                        'Yönetici olduğun topluluk yok.',
+                        style: TextStyle(
+                            fontFamily: "Lalezar",
+                            color: Colors.white,
+                            fontSize: MediaQuery.of(context).size.width * 0.05),
                       ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.width * 0.1,
-                      ),
-                      FilledButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Topluluklar(),
-                              ));
-                        },
-                        style: FilledButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 0, 0, 0),
-                            fixedSize: Size(
-                                MediaQuery.of(context).size.width * 0.6,
-                                MediaQuery.of(context).size.height * 0.05)),
-                        child: Text(
-                          "Topluluklara Göz At",
-                          style: TextStyle(
-                              fontFamily: "Lalezar",
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.045),
-                        ),
-                      ),
-                    ],
+                    ),
                   )
                 : SizedBox(
                     height: MediaQuery.of(context).size.height * 0.98,
@@ -149,9 +105,9 @@ class _UyeliklerState extends State<Uyelikler> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ToplulukHub(
+                                  builder: (context) => YonetimIslemleri(
                                     toplulukAdi: topluluk['toplulukadi'],
-                                    toplulukLogo: topluluk['logo'] ?? "nan",
+                                    toplulukLogo: topluluk['logo'],
                                   ),
                                 ));
                           },
