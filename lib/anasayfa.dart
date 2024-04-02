@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kulup/ayarlar.dart';
 import 'package:kulup/kulupyonetim.dart';
 import 'package:kulup/topluluklar.dart';
 import 'package:kulup/uyelikler.dart';
@@ -46,7 +47,12 @@ class _AnasayfaState extends State<Anasayfa> {
                 },
                 child: buildContainer("Yönetici Olduğun Topluluklar")),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-            GestureDetector(onTap: () {}, child: buildContainer("Ayarlar")),
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Ayarlar()));
+                },
+                child: buildContainer("Ayarlar")),
           ],
         ),
       ),

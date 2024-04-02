@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kulup/services/fetch_uyelik.dart';
 import 'package:kulup/toplulukhub.dart';
 import 'package:kulup/topluluklar.dart';
-import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
 class Uyelikler extends StatefulWidget {
   const Uyelikler({super.key});
@@ -11,58 +11,22 @@ class Uyelikler extends StatefulWidget {
 }
 
 class _UyeliklerState extends State<Uyelikler> {
+  UyelikCek uyelikcek = UyelikCek();
+
   List<Map<String, dynamic>> topluluklar = [];
+  Future<void> _initializeData() async {
+    try {
+      topluluklar = await uyelikcek.fetchTopluluklar();
+    } catch (e) {
+      print('Verileri alma işlemi sırasında bir hata oluştu: $e');
+    }
+  }
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
-    _fetchTopluluklar();
-  }
-
-  Future<void> _fetchTopluluklar() async {
-    // Kullanıcının üyeliklerini çekmek için Uyelikler tablosundan sorgu oluştur
-    final ParseUser user = await ParseUser.currentUser() as ParseUser;
-    final ParseObject memberships = ParseObject('Uyelikler');
-    final QueryBuilder<ParseObject> query =
-        QueryBuilder<ParseObject>(memberships);
-    query.whereEqualTo('username', user.username);
-
-    try {
-      final ParseResponse response = await query.query();
-
-      if (response.success && response.results != null) {
-        final List<dynamic> uyelikler =
-            response.results!.first.get<List>('uyelikler') ?? [];
-        final List<Map<String, dynamic>> topluluklarWithLogos = [];
-
-        // Her bir topluluk adı için logo bilgisini al
-        for (final toplulukAdi in uyelikler) {
-          final QueryBuilder<ParseObject> toplulukQuery =
-              QueryBuilder<ParseObject>(ParseObject('Topluluklar'));
-          toplulukQuery.whereEqualTo('toplulukadi', toplulukAdi);
-          final ParseResponse toplulukResponse = await toplulukQuery.query();
-
-          if (toplulukResponse.success && toplulukResponse.results != null) {
-            final ParseObject result = toplulukResponse.results!.first;
-            final String? logo = result.get<String>('logo');
-
-            // Topluluk adı ve logo bilgisini bir harita olarak ekle
-            topluluklarWithLogos.add({
-              'toplulukadi': toplulukAdi,
-              'logo': logo,
-            });
-          }
-        }
-
-        setState(() {
-          topluluklar = topluluklarWithLogos;
-        });
-      } else {
-        print('Kullanıcı bulunamadı veya üyelikler alınamadı');
-      }
-    } catch (e) {
-      print('Hata: $e');
-    }
+    _initializeData();
   }
 
   @override

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kulup/services/fetch_uyelik.dart';
 import 'package:kulup/toplulukhub.dart';
 
 class ToplulukDetay extends StatefulWidget {
@@ -21,6 +22,21 @@ class ToplulukDetay extends StatefulWidget {
 }
 
 class _ToplulukDetayState extends State<ToplulukDetay> {
+  UyelikCek uyelikcek = UyelikCek();
+  List<dynamic> topluluklar = [];
+  bool _isMember = false;
+  Future<void> _initializeData() async {
+    try {
+      topluluklar = await uyelikcek.fetchTopluluklarIsim();
+      bool isMember = isUserMemberOfCommunity(toplulukAdi, topluluklar);
+      setState(() {
+        _isMember = isMember;
+      });
+    } catch (e) {
+      print('Verileri alma işlemi sırasında bir hata oluştu: $e');
+    }
+  }
+
   late String toplulukAdi;
   late String toplulukBaskani;
   late String toplulukDanismani;
@@ -30,11 +46,17 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
   @override
   void initState() {
     super.initState();
+    _initializeData();
     toplulukAdi = widget.toplulukAdi;
     toplulukBaskani = widget.toplulukBaskani;
     toplulukDanismani = widget.toplulukDanismani;
     toplulukKolu = widget.toplulukKolu;
     toplulukLogo = widget.toplulukLogo;
+  }
+
+  bool isUserMemberOfCommunity(
+      String communityName, List<dynamic> memberships) {
+    return memberships.contains(communityName);
   }
 
   @override
@@ -128,28 +150,42 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
           SizedBox(
             height: MediaQuery.of(context).size.width * 0.08,
           ),
-          FilledButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ToplulukHub(
-                      toplulukAdi: toplulukAdi,
-                      toplulukLogo: toplulukLogo,
-                    ),
-                  ));
-            },
-            style: FilledButton.styleFrom(
-                backgroundColor: Colors.black,
-                fixedSize: Size(MediaQuery.of(context).size.width * 0.6,
-                    MediaQuery.of(context).size.height * 0.05)),
-            child: Text(
-              "Topluluk Sayfasına Git",
-              style: TextStyle(
-                  fontFamily: "Lalezar",
-                  fontSize: MediaQuery.of(context).size.width * 0.05),
-            ),
-          ),
+          _isMember
+              ? FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ToplulukHub(
+                            toplulukAdi: toplulukAdi,
+                            toplulukLogo: toplulukLogo,
+                          ),
+                        ));
+                  },
+                  style: FilledButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      fixedSize: Size(MediaQuery.of(context).size.width * 0.6,
+                          MediaQuery.of(context).size.height * 0.05)),
+                  child: Text(
+                    "Topluluk Sayfasına Git",
+                    style: TextStyle(
+                        fontFamily: "Lalezar",
+                        fontSize: MediaQuery.of(context).size.width * 0.05),
+                  ),
+                )
+              : FilledButton(
+                  onPressed: () {},
+                  style: FilledButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      fixedSize: Size(MediaQuery.of(context).size.width * 0.6,
+                          MediaQuery.of(context).size.height * 0.05)),
+                  child: Text(
+                    "Toplululuğa Üye Ol",
+                    style: TextStyle(
+                        fontFamily: "Lalezar",
+                        fontSize: MediaQuery.of(context).size.width * 0.05),
+                  ),
+                )
         ],
       ),
     );
