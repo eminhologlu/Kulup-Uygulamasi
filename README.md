@@ -1,16 +1,6 @@
-# kulup
+# Fırat Üniversitesi Topluluk Mobil Uygulaması
 
-A new Flutter project.
+Flutter ile geliştirilen bu uygulamada Fırat Üniversitesi öğrencileri topluluklara kolayca üye olabilecek, topluluk duyurularını ve etkinliklerini uygulama üzerinden görüntüleyebilecek.
+Topluluk yöneticileri için kolayca etkinlik oluşturma-düzenleme, duyuru oluşturma-düzenleme, üyeleri yönetme gibi özellikler de eklenmiştir.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
