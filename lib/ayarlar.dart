@@ -35,7 +35,7 @@ class _AyarlarState extends State<Ayarlar> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios_new_rounded,
               color: Colors.white,
             )),
@@ -47,7 +47,7 @@ class _AyarlarState extends State<Ayarlar> {
             doUserLogout();
           },
           style: FilledButton.styleFrom(
-              backgroundColor: Color.fromARGB(255, 218, 83, 83),
+              backgroundColor: const Color.fromARGB(255, 218, 83, 83),
               fixedSize: Size(MediaQuery.of(context).size.width * 0.7,
                   MediaQuery.of(context).size.height * 0.05)),
           child: Text(
