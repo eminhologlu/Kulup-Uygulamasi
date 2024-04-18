@@ -42,20 +42,54 @@ class _AyarlarState extends State<Ayarlar> {
       ),
       backgroundColor: const Color.fromARGB(255, 79, 93, 154),
       body: Center(
-        child: FilledButton(
-          onPressed: () async {
-            doUserLogout();
-          },
-          style: FilledButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 218, 83, 83),
-              fixedSize: Size(MediaQuery.of(context).size.width * 0.7,
-                  MediaQuery.of(context).size.height * 0.05)),
-          child: Text(
-            "Çıkış Yap",
-            style: TextStyle(
-                fontFamily: "Lalezar",
-                fontSize: MediaQuery.of(context).size.width * 0.05),
-          ),
+        child: Column(
+          children: [
+            FilledButton(
+              onPressed: () async {
+                doUserLogout();
+              },
+              style: FilledButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 218, 83, 83),
+                  fixedSize: Size(MediaQuery.of(context).size.width * 0.7,
+                      MediaQuery.of(context).size.height * 0.05)),
+              child: Text(
+                "Çıkış Yap",
+                style: TextStyle(
+                    fontFamily: "Lalezar",
+                    fontSize: MediaQuery.of(context).size.width * 0.05),
+              ),
+            ),
+            FilledButton(
+              onPressed: () async {
+                doUserLogout();
+              },
+              style: FilledButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 218, 83, 83),
+                  fixedSize: Size(MediaQuery.of(context).size.width * 0.7,
+                      MediaQuery.of(context).size.height * 0.05)),
+              child: Text(
+                "Çıkış Yap",
+                style: TextStyle(
+                    fontFamily: "Lalezar",
+                    fontSize: MediaQuery.of(context).size.width * 0.05),
+              ),
+            ),
+            FilledButton(
+              onPressed: () async {
+                doUserLogout();
+              },
+              style: FilledButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 218, 83, 83),
+                  fixedSize: Size(MediaQuery.of(context).size.width * 0.7,
+                      MediaQuery.of(context).size.height * 0.05)),
+              child: Text(
+                "Çıkış Yap",
+                style: TextStyle(
+                    fontFamily: "Lalezar",
+                    fontSize: MediaQuery.of(context).size.width * 0.05),
+              ),
+            ),
+          ],
         ),
       ),
     );
