@@ -5,7 +5,6 @@ import 'package:kulup/topluluklar.dart';
 
 class Uyelikler extends StatefulWidget {
   const Uyelikler({super.key});
-
   @override
   State<Uyelikler> createState() => _UyeliklerState();
 }
@@ -16,7 +15,11 @@ class _UyeliklerState extends State<Uyelikler> {
   List<Map<String, dynamic>> topluluklar = [];
   Future<void> _initializeData() async {
     try {
-      topluluklar = await uyelikcek.fetchTopluluklar();
+      List<Map<String, dynamic>> fetchedData =
+          await uyelikcek.fetchTopluluklar();
+      setState(() {
+        topluluklar = fetchedData;
+      });
     } catch (e) {
       print('Verileri alma işlemi sırasında bir hata oluştu: $e');
     }
@@ -24,7 +27,6 @@ class _UyeliklerState extends State<Uyelikler> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _initializeData();
   }
