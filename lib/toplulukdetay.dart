@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kulup/services/fetch_uyelik.dart';
 import 'package:kulup/toplulukhub.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
@@ -22,69 +23,29 @@ class ToplulukDetay extends StatefulWidget {
 }
 
 class _ToplulukDetayState extends State<ToplulukDetay> {
-  Future<List<Map<String, dynamic>>> fetchTopluluklar() async {
-    // Kullanıcının üyeliklerini çekmek için Uyelikler tablosundan sorgu oluştur
-    final ParseUser user = await ParseUser.currentUser() as ParseUser;
-    final ParseObject memberships = ParseObject('Uyelikler');
-    final QueryBuilder<ParseObject> query =
-        QueryBuilder<ParseObject>(memberships);
-    query.whereEqualTo('username', user.username);
-
-    try {
-      final ParseResponse response = await query.query();
-
-      if (response.success && response.results != null) {
-        final List<dynamic> uyelikler =
-            response.results!.first.get<List>('uyelikler') ?? [];
-        final List<Map<String, dynamic>> topluluklarWithLogos = [];
-
-        // Her bir topluluk adı için logo bilgisini al
-        for (final toplulukAdi in uyelikler) {
-          final QueryBuilder<ParseObject> toplulukQuery =
-              QueryBuilder<ParseObject>(ParseObject('Topluluklar'));
-          toplulukQuery.whereEqualTo('toplulukadi', toplulukAdi);
-          final ParseResponse toplulukResponse = await toplulukQuery.query();
-
-          if (toplulukResponse.success && toplulukResponse.results != null) {
-            final ParseObject result = toplulukResponse.results!.first;
-            final String? logo = result.get<String>('logo');
-
-            // Topluluk adı ve logo bilgisini bir harita olarak ekle
-            topluluklarWithLogos.add({
-              'toplulukadi': toplulukAdi,
-              'logo': logo,
-            });
-          }
-        }
-        return topluluklarWithLogos;
-      } else {
-        print('Kullanıcı bulunamadı veya üyelikler alınamadı');
-      }
-    } catch (e) {
-      print('Hata: $e');
-    }
-    return [];
-  }
-
-  List<dynamic> topluluklar = [];
-  bool _isMember = false;
-  Future<void> _initializeData() async {
-    try {
-      topluluklar = await fetchTopluluklar();
-      bool isMember = isUserMemberOfCommunity(toplulukAdi, topluluklar);
-      setState(() {
-        _isMember = isMember;
-      });
-    } catch (e) {
-      print('Verileri alma işlemi sırasında bir hata oluştu: $e');
-    }
-  }
-
   late String toplulukAdi;
   late String toplulukBaskani;
   late String toplulukDanismani;
   late String toplulukKolu;
   late String toplulukLogo;
+  bool _isMember = false;
+  bool _isButtonDisabled = false;
+  bool _isSnackBarActive = false;
+
+  UyelikCek uyelikcek = UyelikCek();
+
+  List<String> topluluklar = [];
+  Future<void> _initializeData() async {
+    try {
+      List<String> fetchedData = await uyelikcek.fetchTopluluklarIsim();
+      setState(() {
+        topluluklar = fetchedData;
+        _isMember = topluluklar.contains(toplulukAdi);
+      });
+    } catch (e) {
+      print('Verileri alma işlemi sırasında bir hata oluştu: $e');
+    }
+  }
 
   @override
   void initState() {
@@ -95,11 +56,6 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
     toplulukDanismani = widget.toplulukDanismani;
     toplulukKolu = widget.toplulukKolu;
     toplulukLogo = widget.toplulukLogo;
-  }
-
-  bool isUserMemberOfCommunity(
-      String communityName, List<dynamic> memberships) {
-    return memberships.contains(communityName);
   }
 
   @override
@@ -217,7 +173,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
                   ),
                 )
               : FilledButton(
-                  onPressed: () {},
+                  onPressed: _isButtonDisabled ? null : _sendJoinRequest,
                   style: FilledButton.styleFrom(
                       backgroundColor: Colors.black,
                       fixedSize: Size(MediaQuery.of(context).size.width * 0.6,
@@ -232,5 +188,107 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
         ],
       ),
     );
+  }
+
+  void _sendJoinRequest() async {
+    if (_isSnackBarActive) {
+      return; // Eğer bir SnackBar zaten gösteriliyorsa işlemi durdur
+    }
+    try {
+      setState(() {
+        _isButtonDisabled = true; // Butonu devre dışı bırak
+      });
+
+      final currentUser = await ParseUser.currentUser();
+      final String? currentUsername = currentUser?.username;
+
+      if (currentUsername != null) {
+        QueryBuilder<ParseObject> queryBuilder =
+            QueryBuilder<ParseObject>(ParseObject('Topluluklar'))
+              ..whereEqualTo('toplulukadi', toplulukAdi);
+
+        ParseResponse response = await queryBuilder.query();
+
+        if (response.results != null) {
+          List<ParseObject> results = response.results!.cast<ParseObject>();
+
+          if (results.isNotEmpty) {
+            ParseObject topluluk = results.first;
+            List<dynamic>? istekler = topluluk.get('istekler');
+
+            if (istekler != null && istekler.contains(currentUsername)) {
+              // Eğer istek atanlar arasında mevcut kullanıcı varsa uyarı yap
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(
+                    backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+                    content: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Zaten bu topluluğa bir istek göndermişsiniz.",
+                        style: TextStyle(
+                            fontFamily: "Lalezar",
+                            fontSize:
+                                MediaQuery.of(context).size.width * 0.045),
+                      ),
+                    ),
+                  ))
+                  .closed
+                  .then((_) {
+                _isSnackBarActive =
+                    false; // SnackBar kapatıldığında kontrolü geri çevir
+              });
+              _isSnackBarActive = true;
+            } else {
+              // İstek atanlar listesine mevcut kullanıcıyı ekle
+              if (istekler == null) {
+                istekler = [];
+              }
+              istekler.add(currentUsername);
+              topluluk.set('istekler', istekler);
+
+              await topluluk.save();
+
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(
+                    backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+                    content: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Topluluğa katılma isteği başarıyla gönderildi.",
+                        style: TextStyle(
+                            fontFamily: "Lalezar",
+                            fontSize:
+                                MediaQuery.of(context).size.width * 0.045),
+                      ),
+                    ),
+                  ))
+                  .closed
+                  .then((_) {
+                _isSnackBarActive =
+                    false; // SnackBar kapatıldığında kontrolü geri çevir
+              });
+            }
+          } else {
+            throw Exception('Belirtilen topluluk bulunamadı.');
+          }
+        } else {
+          throw Exception('Topluluklar bulunamadı.');
+        }
+      } else {
+        throw Exception('Kullanıcı adı alınamadı.');
+      }
+    } catch (e) {
+      print('Topluluğa katılma isteği gönderilirken hata oluştu: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content:
+              Text('Topluluğa katılma isteği gönderilirken bir hata oluştu.'),
+        ),
+      );
+    } finally {
+      setState(() {
+        _isButtonDisabled = false; // Butonu etkinleştir
+      });
+    }
   }
 }
