@@ -27,10 +27,145 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
   List<Announcement> announcements = [];
   List<Event> events = [];
   List<String> members = [];
+  List<dynamic> istekler = [];
   bool isDuyuruButtonEnabled = false;
   bool isEtkinlikButtonEnabled = false;
   bool uyeVarMi = false;
   bool _isSnackBarActive = false;
+
+  Future<void> reddetIstek(String kullaniciAdi) async {
+    try {
+      QueryBuilder<ParseObject> queryBuilder =
+          QueryBuilder<ParseObject>(ParseObject('Topluluklar'))
+            ..whereEqualTo('toplulukadi', widget.toplulukAdi);
+
+      ParseResponse response = await queryBuilder.query();
+      List<ParseObject> topluluklar =
+          response.results?.cast<ParseObject>() ?? [];
+
+      if (topluluklar.isNotEmpty) {
+        ParseObject topluluk = topluluklar.first;
+        List<dynamic> isteklerDynamic = topluluk.get<List>('istekler') ?? [];
+
+        // isteği sil
+        List<String> istekler =
+            isteklerDynamic.map((item) => item.toString()).toList();
+        istekler.remove(kullaniciAdi);
+
+        topluluk.set('istekler', istekler);
+        await topluluk.save();
+
+        // istekleri güncelle
+        setState(() {
+          _fetchIstekler();
+        });
+      }
+    } catch (e) {
+      print('İstek reddedilirken hata oluştu: $e');
+    }
+  }
+
+  Future<void> onaylaIstek(String kullaniciAdi) async {
+    try {
+      ParseObject? uyelik = await _getUyelik(kullaniciAdi);
+
+      if (uyelik != null) {
+        List<dynamic> uyeliklerDynamic = uyelik.get<List>('uyelikler') ?? [];
+        List<String> uyelikler = uyeliklerDynamic.cast<String>();
+
+        // üyelik ekle
+        if (!uyelikler.contains(widget.toplulukAdi)) {
+          uyelikler.add(widget.toplulukAdi);
+          uyelik.set('uyelikler', uyelikler);
+          await uyelik.save();
+        }
+      } else {
+        // yeni üyelik
+        if (kullaniciAdi.isNotEmpty) {
+          ParseObject yeniUyelik = ParseObject('Uyelikler')
+            ..set('username', kullaniciAdi)
+            ..set('uyelikler', [widget.toplulukAdi]);
+          await yeniUyelik.save();
+        } else {
+          throw Exception('Kullanıcı adı boş olamaz.');
+        }
+      }
+
+      QueryBuilder<ParseObject> queryBuilder =
+          QueryBuilder<ParseObject>(ParseObject('Topluluklar'))
+            ..whereEqualTo('toplulukadi', widget.toplulukAdi);
+
+      ParseResponse response = await queryBuilder.query();
+      List<ParseObject> topluluklar =
+          response.results?.cast<ParseObject>() ?? [];
+
+      if (topluluklar.isNotEmpty) {
+        ParseObject topluluk = topluluklar.first;
+        List<dynamic> isteklerDynamic = topluluk.get<List>('istekler') ?? [];
+
+        List<String> istekler =
+            isteklerDynamic.map((item) => item.toString()).toList();
+
+        // isteği sil
+        istekler.remove(kullaniciAdi);
+
+        topluluk.set('istekler', istekler);
+        await topluluk.save();
+
+        // istekleri güncelle, üyeleri güncelle
+        setState(() {
+          _fetchIstekler();
+          _fetchMembers(widget.toplulukAdi);
+        });
+      }
+    } catch (e) {
+      print('İstek onaylanırken hata oluştu: $e');
+    }
+  }
+
+  Future<ParseObject?> _getUyelik(String kullaniciAdi) async {
+    try {
+      QueryBuilder<ParseObject> queryBuilder =
+          QueryBuilder<ParseObject>(ParseObject('Uyelikler'))
+            ..whereEqualTo('username', kullaniciAdi);
+
+      ParseResponse response = await queryBuilder.query();
+      List<ParseObject> results = response.results!.cast<ParseObject>();
+
+      if (results.isNotEmpty) {
+        return results.first;
+      } else {
+        return null;
+      }
+    } catch (e) {
+      print('Uyelik sorgulanırken hata oluştu: $e');
+      return null;
+    }
+  }
+
+  Future<void> _fetchIstekler() async {
+    try {
+      ParseResponse response = await ParseObject('Topluluklar').getAll();
+
+      if (response.success && response.results != null) {
+        List<ParseObject> topluluklar = response.results!.cast<ParseObject>();
+
+        ParseObject topluluk = topluluklar.firstWhere(
+          (topluluk) =>
+              topluluk.get<String>('toplulukadi') == widget.toplulukAdi,
+          orElse: () => ParseObject('Null'),
+        );
+
+        setState(() {
+          istekler = topluluk.get<List>('istekler') ?? [];
+        });
+      } else {
+        throw Exception('Topluluklar alınırken bir hata oluştu.');
+      }
+    } catch (e) {
+      print('Topluluk istekleri alınırken hata oluştu: $e');
+    }
+  }
 
   Future<void> removeMembership(
       String username, String communityName, context) async {
@@ -456,6 +591,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
     _fetchAnnouncements(toplulukAdi);
     _fetchEvents(toplulukAdi);
     _fetchMembers(toplulukAdi);
+    _fetchIstekler();
   }
 
   @override
@@ -463,7 +599,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
     return Scaffold(
       body: DefaultTabController(
         initialIndex: 0,
-        length: 5,
+        length: 6,
         child: GestureDetector(
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: Scaffold(
@@ -556,6 +692,23 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                       child: Text(
                         textAlign: TextAlign.center,
                         "Üyeler",
+                        style: TextStyle(
+                            fontFamily: "Lalezar",
+                            fontSize: MediaQuery.of(context).size.width * 0.05),
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Container(
+                      height: MediaQuery.of(context).size.width * 0.07,
+                      width: MediaQuery.of(context).size.height * 0.1,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                              MediaQuery.of(context).size.width * 0.03),
+                          color: const Color.fromARGB(255, 255, 255, 255)),
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        "İstekler",
                         style: TextStyle(
                             fontFamily: "Lalezar",
                             fontSize: MediaQuery.of(context).size.width * 0.05),
@@ -1480,6 +1633,161 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                           alignment: Alignment.topCenter,
                           child: Text(
                             "Toplulukta üye yok.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Lalezar",
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.06),
+                          ),
+                        ),
+                      ),
+                istekler.isNotEmpty
+                    ? ListView.separated(
+                        padding: EdgeInsets.all(
+                            MediaQuery.of(context).size.width * 0.015),
+                        itemCount: istekler.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return GestureDetector(
+                            onTap: () {},
+                            child: Column(
+                              children: [
+                                Stack(
+                                  alignment: Alignment.centerLeft,
+                                  children: [
+                                    Container(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.04,
+                                      width:
+                                          MediaQuery.of(context).size.height *
+                                              0.32,
+                                      decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 133, 202, 149),
+                                          border: Border.all(
+                                              color: const Color.fromARGB(
+                                                  255, 133, 202, 149)),
+                                          borderRadius: BorderRadius.circular(
+                                              MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.05)),
+                                      child: Padding(
+                                        padding: EdgeInsets.only(
+                                            left: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.005),
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              left: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.01),
+                                          child: SizedBox(
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.07,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.62,
+                                            child: Align(
+                                              alignment: Alignment.centerLeft,
+                                              child: SingleChildScrollView(
+                                                child: Text(
+                                                  istekler[index],
+                                                  style: TextStyle(
+                                                      fontFamily: "Lalezar",
+                                                      color:
+                                                          const Color.fromARGB(
+                                                              255, 0, 0, 0),
+                                                      fontSize:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.05),
+                                                  overflow:
+                                                      TextOverflow.visible,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Container(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.13,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.13,
+                                          decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Color.fromARGB(
+                                                  255, 79, 93, 154)),
+                                          child: IconButton(
+                                              onPressed: () {
+                                                onaylaIstek(istekler[index]);
+                                              },
+                                              icon: const Icon(
+                                                Icons
+                                                    .check_circle_outline_rounded,
+                                                color: Color.fromARGB(
+                                                    255, 255, 255, 255),
+                                              )),
+                                        ),
+                                        Container(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.13,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.13,
+                                          decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Color.fromARGB(
+                                                  255, 79, 93, 154)),
+                                          child: IconButton(
+                                              onPressed: () {
+                                                reddetIstek(istekler[index]);
+                                              },
+                                              icon: const Icon(
+                                                Icons.cancel_outlined,
+                                                color: Color.fromARGB(
+                                                    255, 255, 255, 255),
+                                              )),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) =>
+                            const Divider(
+                          color: Color.fromARGB(255, 79, 93, 154),
+                        ),
+                      )
+                    : Padding(
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.width * 0.1),
+                        child: Align(
+                          alignment: Alignment.topCenter,
+                          child: Text(
+                            "Hiç istek yok.",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: Colors.white,
