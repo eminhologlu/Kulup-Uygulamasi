@@ -15,6 +15,7 @@ class YonetimIslemleri extends StatefulWidget {
 }
 
 class _YonetimIslemleriState extends State<YonetimIslemleri> {
+  Duration duration = Duration(hours: 3);
   DateTime? selectedDateTime;
   DateFormat dateFormat = DateFormat("d MMMM yyyy EEEE", "tr_TR");
   DateFormat timeFormat = DateFormat("HH:mm");
@@ -196,7 +197,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
           // Kullanıcı yönetici ise uyarı göster
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(
-                backgroundColor: const Color.fromARGB(255, 255, 0, 0),
+                backgroundColor: const Color.fromARGB(255, 255, 127, 62),
                 content: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -226,7 +227,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
 
             ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(
-                  backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+                  backgroundColor: const Color.fromARGB(255, 255, 127, 62),
                   content: Align(
                     alignment: Alignment.center,
                     child: Text(
@@ -305,7 +306,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
             announcements.remove(announcement);
           });
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+            backgroundColor: const Color.fromARGB(255, 255, 127, 62),
             content: Align(
               alignment: Alignment.center,
               child: Text(
@@ -347,7 +348,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
             events.remove(event);
           });
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+            backgroundColor: const Color.fromARGB(255, 255, 127, 62),
             content: Align(
               alignment: Alignment.center,
               child: Text(
@@ -360,7 +361,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
           ));
         } else {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+            backgroundColor: const Color.fromARGB(255, 255, 127, 62),
             content: Align(
               alignment: Alignment.center,
               child: Text(
@@ -377,7 +378,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+        backgroundColor: const Color.fromARGB(255, 255, 127, 62),
         content: Align(
           alignment: Alignment.center,
           child: Text(
@@ -488,7 +489,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
         _clearFields();
         _fetchEvents(toplulukAdi);
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+          backgroundColor: const Color.fromARGB(255, 255, 127, 62),
           content: Align(
             alignment: Alignment.center,
             child: Text(
@@ -501,7 +502,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
         ));
       } else {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+          backgroundColor: const Color.fromARGB(255, 255, 127, 62),
           content: Align(
             alignment: Alignment.center,
             child: Text(
@@ -515,7 +516,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+        backgroundColor: const Color.fromARGB(255, 255, 127, 62),
         content: Align(
           alignment: Alignment.center,
           child: Text(
@@ -542,7 +543,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
         _clearDuyuruFields();
         _fetchAnnouncements(toplulukAdi);
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+          backgroundColor: const Color.fromARGB(255, 255, 127, 62),
           content: Align(
             alignment: Alignment.center,
             child: Text(
@@ -555,7 +556,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
         ));
       } else {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+          backgroundColor: const Color.fromARGB(255, 255, 127, 62),
           content: Align(
             alignment: Alignment.center,
             child: Text(
@@ -569,7 +570,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+        backgroundColor: const Color.fromARGB(255, 255, 127, 62),
         content: Align(
           alignment: Alignment.center,
           child: Text(
@@ -603,15 +604,15 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
         child: GestureDetector(
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
           child: Scaffold(
-            backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+            backgroundColor: const Color.fromARGB(255, 42, 98, 154),
             appBar: AppBar(
               bottom: TabBar(
                 tabAlignment: TabAlignment.start,
                 isScrollable: true,
-                labelColor: const Color.fromARGB(255, 79, 93, 154),
-                dividerColor: const Color.fromARGB(255, 79, 93, 154),
-                unselectedLabelColor: const Color.fromARGB(255, 0, 0, 0),
-                indicatorColor: const Color.fromARGB(255, 255, 255, 255),
+                labelColor: const Color.fromARGB(255, 42, 98, 154),
+                dividerColor: const Color.fromARGB(255, 42, 98, 154),
+                unselectedLabelColor: const Color.fromARGB(255, 42, 98, 154),
+                indicatorColor: const Color.fromARGB(255, 255, 218, 120),
                 tabs: [
                   Tab(
                     child: Container(
@@ -620,7 +621,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(
                               MediaQuery.of(context).size.width * 0.03),
-                          color: const Color.fromARGB(255, 255, 255, 255)),
+                          color: Color.fromARGB(255, 255, 255, 255)),
                       child: Text(
                         textAlign: TextAlign.center,
                         "Duyuru Yap",
@@ -723,12 +724,12 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                   toplulukAdi,
                   style: TextStyle(
                       overflow: TextOverflow.fade,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 255, 255, 255),
                       fontFamily: "Lalezar",
                       fontSize: MediaQuery.of(context).size.width * 0.05),
                 ),
               ),
-              backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+              backgroundColor: const Color.fromARGB(255, 42, 98, 154),
               leading: GestureDetector(
                 onTap: () {
                   Navigator.pop(context);
@@ -750,7 +751,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                         Text(
                           "Duyuru Başlığı",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 255, 218, 120),
                               fontFamily: "Lalezar",
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.06),
@@ -766,12 +767,13 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                             maxLength: 60,
                             controller: duyuruBaslik,
                             style: TextStyle(
+                                color: Color.fromARGB(255, 255, 127, 62),
                                 fontSize:
                                     MediaQuery.of(context).size.height * 0.025,
                                 fontFamily: "Lalezar"),
                             cursorHeight:
                                 MediaQuery.of(context).size.height * 0.02,
-                            cursorColor: Colors.black,
+                            cursorColor: Color.fromARGB(255, 255, 127, 62),
                             decoration: InputDecoration(
                               counterText: "",
                               hintText: "Maksimum 60 karakter",
@@ -808,7 +810,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                         Text(
                           "Duyuru İçeriği",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 255, 218, 120),
                               fontFamily: "Lalezar",
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.06),
@@ -835,12 +837,13 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                             maxLines: null,
                             controller: duyuruIcerik,
                             style: TextStyle(
+                                color: Color.fromARGB(255, 255, 127, 62),
                                 fontSize:
-                                    MediaQuery.of(context).size.height * 0.02,
+                                    MediaQuery.of(context).size.height * 0.025,
                                 fontFamily: "Lalezar"),
                             cursorHeight:
                                 MediaQuery.of(context).size.height * 0.02,
-                            cursorColor: Colors.black,
+                            cursorColor: Color.fromARGB(255, 255, 127, 62),
                             decoration: InputDecoration(
                               hintText: "Maksimum 1000 karakter",
                               border: InputBorder.none,
@@ -865,13 +868,14 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                 },
                           style: FilledButton.styleFrom(
                               backgroundColor:
-                                  Color.fromARGB(255, 132, 202, 34),
+                                  Color.fromARGB(255, 255, 218, 120),
                               fixedSize: Size(
                                   MediaQuery.of(context).size.width * 0.4,
                                   MediaQuery.of(context).size.height * 0.05)),
                           child: Text(
                             "Duyuru Yap",
                             style: TextStyle(
+                                color: Color.fromARGB(255, 42, 98, 154),
                                 fontFamily: "Lalezar",
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.05),
@@ -890,7 +894,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                         Text(
                           "Etkinlik Başlığı",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 255, 218, 120),
                               fontFamily: "Lalezar",
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.06),
@@ -906,12 +910,13 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                             maxLength: 60,
                             controller: etkinlikBaslik,
                             style: TextStyle(
+                                color: Color.fromARGB(255, 255, 127, 62),
                                 fontSize:
                                     MediaQuery.of(context).size.height * 0.025,
                                 fontFamily: "Lalezar"),
                             cursorHeight:
                                 MediaQuery.of(context).size.height * 0.02,
-                            cursorColor: Colors.black,
+                            cursorColor: Color.fromARGB(255, 255, 127, 62),
                             decoration: InputDecoration(
                               counterText: "",
                               hintText: "Maksimum 60 karakter",
@@ -948,7 +953,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                         Text(
                           "Etkinlik Yeri",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 255, 218, 120),
                               fontFamily: "Lalezar",
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.06),
@@ -964,12 +969,13 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                             maxLength: 60,
                             controller: etkinlikYer,
                             style: TextStyle(
+                                color: Color.fromARGB(255, 255, 127, 62),
                                 fontSize:
                                     MediaQuery.of(context).size.height * 0.025,
                                 fontFamily: "Lalezar"),
                             cursorHeight:
                                 MediaQuery.of(context).size.height * 0.02,
-                            cursorColor: Colors.black,
+                            cursorColor: Color.fromARGB(255, 255, 127, 62),
                             decoration: InputDecoration(
                               counterText: "",
                               hintText: "Maksimum 60 karakter",
@@ -1009,13 +1015,14 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                           },
                           style: FilledButton.styleFrom(
                               backgroundColor:
-                                  Color.fromARGB(255, 202, 160, 34),
+                                  Color.fromARGB(255, 255, 218, 120),
                               fixedSize: Size(
                                   MediaQuery.of(context).size.width * 0.5,
                                   MediaQuery.of(context).size.height * 0.05)),
                           child: Text(
                             "Tarih Seç",
                             style: TextStyle(
+                                color: Color.fromARGB(255, 42, 98, 154),
                                 fontFamily: "Lalezar",
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.05),
@@ -1027,13 +1034,14 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                           },
                           style: FilledButton.styleFrom(
                               backgroundColor:
-                                  Color.fromARGB(255, 34, 202, 152),
+                                  Color.fromARGB(255, 255, 218, 120),
                               fixedSize: Size(
                                   MediaQuery.of(context).size.width * 0.5,
                                   MediaQuery.of(context).size.height * 0.05)),
                           child: Text(
                             "Saat Seç",
                             style: TextStyle(
+                                color: Color.fromARGB(255, 42, 98, 154),
                                 fontFamily: "Lalezar",
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.05),
@@ -1045,7 +1053,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                         Text(
                           "Seçilen Tarih ve Saat",
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 255, 218, 120),
                               fontFamily: "Lalezar",
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.06),
@@ -1057,14 +1065,18 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                             readOnly: true,
                             maxLength: 60,
                             style: TextStyle(
+                                color: Color.fromARGB(255, 255, 127, 62),
                                 fontSize:
                                     MediaQuery.of(context).size.height * 0.025,
                                 fontFamily: "Lalezar"),
                             cursorHeight:
                                 MediaQuery.of(context).size.height * 0.02,
-                            cursorColor: Colors.black,
+                            cursorColor: Color.fromARGB(255, 255, 127, 62),
                             decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.date_range_rounded),
+                              prefixIcon: const Icon(
+                                Icons.date_range_rounded,
+                                color: Color.fromARGB(255, 255, 127, 62),
+                              ),
                               counterText: "",
                               hintText: selectedDateTime != null
                                   ? selectedDateTime.toString().substring(0, 16)
@@ -1117,13 +1129,14 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                 },
                           style: FilledButton.styleFrom(
                               backgroundColor:
-                                  const Color.fromARGB(255, 132, 202, 34),
+                                  const Color.fromARGB(255, 255, 218, 120),
                               fixedSize: Size(
                                   MediaQuery.of(context).size.width * 0.5,
                                   MediaQuery.of(context).size.height * 0.05)),
                           child: Text(
                             "Etkinlik Oluştur",
                             style: TextStyle(
+                                color: Color.fromARGB(255, 42, 98, 154),
                                 fontFamily: "Lalezar",
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.05),
@@ -1163,15 +1176,15 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                               0.1,
                                       decoration: BoxDecoration(
                                           color: const Color.fromARGB(
-                                              255, 133, 202, 149),
+                                              255, 255, 218, 120),
                                           border: Border.all(
                                               color: const Color.fromARGB(
-                                                  255, 133, 202, 149)),
+                                                  255, 255, 218, 120)),
                                           borderRadius: BorderRadius.circular(
                                               MediaQuery.of(context)
                                                       .size
                                                       .width *
-                                                  0.05)),
+                                                  0.13)),
                                       child: Padding(
                                         padding: EdgeInsets.only(
                                             left: MediaQuery.of(context)
@@ -1186,9 +1199,8 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                                   ? NetworkImage(toplulukLogo)
                                                   : const NetworkImage(
                                                       "https://unievi.firat.edu.tr/assets/front/img/firat-logo-yeni.png"),
-                                              backgroundColor:
-                                                  const Color.fromARGB(
-                                                      255, 255, 255, 255),
+                                              backgroundColor: Color.fromARGB(
+                                                  0, 255, 255, 255),
                                               radius: MediaQuery.of(context)
                                                       .size
                                                       .width *
@@ -1199,7 +1211,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                                   left: MediaQuery.of(context)
                                                           .size
                                                           .width *
-                                                      0.01),
+                                                      0.025),
                                               child: SizedBox(
                                                 height: MediaQuery.of(context)
                                                         .size
@@ -1219,12 +1231,12 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                                           fontFamily: "Lalezar",
                                                           color: const Color
                                                               .fromARGB(
-                                                              255, 0, 0, 0),
+                                                              255, 42, 98, 154),
                                                           fontSize: MediaQuery.of(
                                                                       context)
                                                                   .size
                                                                   .width *
-                                                              0.05),
+                                                              0.06),
                                                       overflow:
                                                           TextOverflow.visible,
                                                     ),
@@ -1245,7 +1257,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                       decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
                                           color:
-                                              Color.fromARGB(255, 79, 93, 154)),
+                                              Color.fromARGB(255, 42, 98, 154)),
                                       child: IconButton(
                                           onPressed: () {
                                             _deleteAnnouncement(
@@ -1268,10 +1280,10 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                         MediaQuery.of(context).size.width * 0.2,
                                     decoration: BoxDecoration(
                                       color: const Color.fromARGB(
-                                          255, 255, 255, 255),
+                                          255, 42, 98, 154),
                                       border: Border.all(
                                           color: const Color.fromARGB(
-                                              255, 255, 255, 255)),
+                                              255, 42, 98, 154)),
                                       borderRadius: BorderRadius.circular(
                                           MediaQuery.of(context).size.width *
                                               0.02),
@@ -1288,8 +1300,8 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                           textAlign: TextAlign.center,
                                           announcement.date.toString(),
                                           style: const TextStyle(
-                                              color:
-                                                  Color.fromARGB(255, 0, 0, 0),
+                                              color: Color.fromARGB(
+                                                  255, 255, 218, 120),
                                               fontFamily: "Lalezar"),
                                         ),
                                       ),
@@ -1342,13 +1354,13 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                     Container(
                                       height:
                                           MediaQuery.of(context).size.height *
-                                              0.25,
+                                              0.27,
                                       decoration: BoxDecoration(
                                           color: const Color.fromARGB(
-                                              255, 133, 202, 149),
+                                              255, 255, 218, 120),
                                           border: Border.all(
                                               color: const Color.fromARGB(
-                                                  255, 133, 202, 149)),
+                                                  255, 255, 218, 120)),
                                           borderRadius: BorderRadius.circular(
                                               MediaQuery.of(context)
                                                       .size
@@ -1359,6 +1371,12 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
+                                            SizedBox(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.015,
+                                            ),
                                             Container(
                                               width: MediaQuery.of(context)
                                                       .size
@@ -1370,7 +1388,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                     color: const Color.fromARGB(
-                                                        255, 0, 0, 0),
+                                                        255, 42, 98, 154),
                                                     fontFamily: "Lalezar",
                                                     fontSize:
                                                         MediaQuery.of(context)
@@ -1389,7 +1407,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                               'Etkinlik Yeri',
                                               style: TextStyle(
                                                   color: const Color.fromARGB(
-                                                      255, 255, 255, 255),
+                                                      255, 0, 50, 133),
                                                   fontFamily: "Lalezar",
                                                   fontSize:
                                                       MediaQuery.of(context)
@@ -1409,7 +1427,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                                 style: TextStyle(
                                                     fontFamily: "Lalezar",
                                                     color: const Color.fromARGB(
-                                                        255, 242, 227, 90),
+                                                        255, 42, 98, 154),
                                                     fontSize:
                                                         MediaQuery.of(context)
                                                                 .size
@@ -1417,11 +1435,17 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                                             0.05),
                                               ),
                                             ),
+                                            SizedBox(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.02,
+                                            ),
                                             Text(
                                               'Tarih',
                                               style: TextStyle(
                                                   color: const Color.fromARGB(
-                                                      255, 255, 255, 255),
+                                                      255, 0, 50, 133),
                                                   fontFamily: "Lalezar",
                                                   fontSize:
                                                       MediaQuery.of(context)
@@ -1434,19 +1458,25 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                               style: TextStyle(
                                                   fontFamily: "Lalezar",
                                                   color: const Color.fromARGB(
-                                                      255, 242, 227, 90),
+                                                      255, 42, 98, 154),
                                                   fontSize:
                                                       MediaQuery.of(context)
                                                               .size
                                                               .width *
                                                           0.05),
+                                            ),
+                                            SizedBox(
+                                              height: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.02,
                                             ),
                                             Text(
                                               'Saat',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: const Color.fromARGB(
-                                                      255, 255, 255, 255),
+                                                      255, 0, 50, 133),
                                                   fontFamily: "Lalezar",
                                                   fontSize:
                                                       MediaQuery.of(context)
@@ -1455,12 +1485,13 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                                           0.05),
                                             ),
                                             Text(
-                                              timeFormat.format(event.date),
+                                              timeFormat.format(
+                                                  event.date.add(duration)),
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   fontFamily: "Lalezar",
                                                   color: const Color.fromARGB(
-                                                      255, 242, 227, 90),
+                                                      255, 42, 98, 133),
                                                   fontSize:
                                                       MediaQuery.of(context)
                                                               .size
@@ -1480,7 +1511,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                       decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
                                           color:
-                                              Color.fromARGB(255, 79, 93, 154)),
+                                              Color.fromARGB(255, 42, 98, 154)),
                                       child: IconButton(
                                           onPressed: () {
                                             _deleteEvent(event, context);
@@ -1499,7 +1530,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                         },
                         separatorBuilder: (BuildContext context, int index) =>
                             const Divider(
-                          color: Color.fromARGB(255, 25, 139, 28),
+                          color: Color.fromARGB(0, 255, 219, 120),
                         ),
                       )
                     : Padding(
@@ -1540,10 +1571,10 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                               0.5,
                                       decoration: BoxDecoration(
                                           color: const Color.fromARGB(
-                                              255, 133, 202, 149),
+                                              255, 255, 218, 120),
                                           border: Border.all(
                                               color: const Color.fromARGB(
-                                                  255, 133, 202, 149)),
+                                                  255, 255, 218, 120)),
                                           borderRadius: BorderRadius.circular(
                                               MediaQuery.of(context)
                                                       .size
@@ -1579,7 +1610,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                                       fontFamily: "Lalezar",
                                                       color:
                                                           const Color.fromARGB(
-                                                              255, 0, 0, 0),
+                                                              255, 42, 98, 154),
                                                       fontSize:
                                                           MediaQuery.of(context)
                                                                   .size
@@ -1603,7 +1634,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                       decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
                                           color:
-                                              Color.fromARGB(255, 79, 93, 154)),
+                                              Color.fromARGB(255, 42, 98, 154)),
                                       child: IconButton(
                                           onPressed: () {
                                             removeMembership(members[index],
@@ -1623,7 +1654,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                         },
                         separatorBuilder: (BuildContext context, int index) =>
                             const Divider(
-                          color: Color.fromARGB(255, 79, 93, 154),
+                          color: Color.fromARGB(0, 79, 93, 154),
                         ),
                       )
                     : Padding(
@@ -1664,10 +1695,10 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                               0.32,
                                       decoration: BoxDecoration(
                                           color: const Color.fromARGB(
-                                              255, 133, 202, 149),
+                                              255, 255, 218, 120),
                                           border: Border.all(
                                               color: const Color.fromARGB(
-                                                  255, 133, 202, 149)),
+                                                  255, 255, 218, 120)),
                                           borderRadius: BorderRadius.circular(
                                               MediaQuery.of(context)
                                                       .size
@@ -1703,7 +1734,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                                       fontFamily: "Lalezar",
                                                       color:
                                                           const Color.fromARGB(
-                                                              255, 0, 0, 0),
+                                                              255, 42, 98, 154),
                                                       fontSize:
                                                           MediaQuery.of(context)
                                                                   .size
@@ -1733,7 +1764,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                           decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color.fromARGB(
-                                                  255, 79, 93, 154)),
+                                                  255, 42, 98, 154)),
                                           child: IconButton(
                                               onPressed: () {
                                                 onaylaIstek(istekler[index]);
@@ -1757,7 +1788,7 @@ class _YonetimIslemleriState extends State<YonetimIslemleri> {
                                           decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color.fromARGB(
-                                                  255, 79, 93, 154)),
+                                                  255, 42, 98, 154)),
                                           child: IconButton(
                                               onPressed: () {
                                                 reddetIstek(istekler[index]);

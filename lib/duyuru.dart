@@ -29,7 +29,7 @@ class _DuyuruState extends State<Duyuru> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 79, 93, 154),
+      backgroundColor: Color.fromARGB(255, 42, 98, 154),
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
@@ -39,12 +39,14 @@ class _DuyuruState extends State<Duyuru> {
               Icons.arrow_back_ios_rounded,
               color: Colors.white,
             )),
-        backgroundColor: Color.fromARGB(255, 79, 93, 154),
+        backgroundColor: Color.fromARGB(255, 42, 98, 154),
         title: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Text(
             duyurubaslik,
-            style: TextStyle(fontFamily: "Lalezar", color: Colors.white),
+            style: TextStyle(
+                fontFamily: "Lalezar",
+                color: Color.fromARGB(255, 255, 218, 120)),
           ),
         ),
       ),
@@ -64,7 +66,7 @@ class _DuyuruState extends State<Duyuru> {
                   top: MediaQuery.of(context).size.height * 0.01),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 133, 202, 149),
+                  color: Color.fromARGB(255, 255, 218, 120),
                   borderRadius: BorderRadius.circular(
                       MediaQuery.of(context).size.width * 0.03),
                 ),
@@ -78,6 +80,7 @@ class _DuyuruState extends State<Duyuru> {
                       duyurutext,
                       textAlign: TextAlign.center,
                       style: TextStyle(
+                          color: Color.fromARGB(255, 42, 98, 154),
                           fontFamily: "Lalezar",
                           fontSize: MediaQuery.of(context).size.width * 0.04),
                     ),

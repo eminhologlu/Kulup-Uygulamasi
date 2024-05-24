@@ -40,7 +40,7 @@ class Auth {
 
   void showError(context, String errorMessage) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+      backgroundColor: const Color.fromARGB(255, 255, 127, 62),
       content: Align(
         alignment: Alignment.center,
         child: Text(

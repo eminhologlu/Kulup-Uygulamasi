@@ -61,9 +61,9 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+      backgroundColor: const Color.fromARGB(255, 42, 98, 154),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+        backgroundColor: const Color.fromARGB(255, 42, 98, 154),
         leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
@@ -78,7 +78,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
           Align(
               alignment: Alignment.topCenter,
               child: CircleAvatar(
-                backgroundColor: Colors.white,
+                backgroundColor: const Color.fromARGB(0, 255, 255, 255),
                 radius: MediaQuery.of(context).size.width * 0.17,
                 foregroundImage: toplulukLogo != "nan"
                     ? NetworkImage(toplulukLogo)
@@ -86,13 +86,13 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
                         "https://unievi.firat.edu.tr/assets/front/img/firat-logo-yeni.png"),
               )),
           SizedBox(
-            height: MediaQuery.of(context).size.width * 0.01,
+            height: MediaQuery.of(context).size.width * 0.05,
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.9,
             child: Text(
                 style: TextStyle(
-                    color: const Color.fromARGB(255, 216, 245, 135),
+                    color: const Color.fromARGB(255, 255, 218, 120),
                     fontFamily: "Lalezar",
                     fontSize: MediaQuery.of(context).size.width * 0.06),
                 textAlign: TextAlign.center,
@@ -104,6 +104,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
           Text(
             "Topluluk Danışmanı",
             style: TextStyle(
+                color: Color.fromARGB(255, 255, 127, 62),
                 fontFamily: "Lalezar",
                 fontSize: MediaQuery.of(context).size.width * 0.07),
           ),
@@ -120,6 +121,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
           Text(
             "Topluluk Başkanı",
             style: TextStyle(
+                color: Color.fromARGB(255, 255, 127, 62),
                 fontFamily: "Lalezar",
                 fontSize: MediaQuery.of(context).size.width * 0.07),
           ),
@@ -136,6 +138,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
           Text(
             "Topluluk Kolu",
             style: TextStyle(
+                color: Color.fromARGB(255, 255, 127, 62),
                 fontFamily: "Lalezar",
                 fontSize: MediaQuery.of(context).size.width * 0.07),
           ),
@@ -162,12 +165,13 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
                         ));
                   },
                   style: FilledButton.styleFrom(
-                      backgroundColor: Colors.black,
+                      backgroundColor: Color.fromARGB(255, 255, 218, 120),
                       fixedSize: Size(MediaQuery.of(context).size.width * 0.6,
                           MediaQuery.of(context).size.height * 0.05)),
                   child: Text(
                     "Topluluk Sayfasına Git",
                     style: TextStyle(
+                        color: Color.fromARGB(255, 42, 98, 154),
                         fontFamily: "Lalezar",
                         fontSize: MediaQuery.of(context).size.width * 0.05),
                   ),
@@ -175,12 +179,13 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
               : FilledButton(
                   onPressed: _isButtonDisabled ? null : _sendJoinRequest,
                   style: FilledButton.styleFrom(
-                      backgroundColor: Colors.black,
+                      backgroundColor: Color.fromARGB(255, 255, 218, 120),
                       fixedSize: Size(MediaQuery.of(context).size.width * 0.6,
                           MediaQuery.of(context).size.height * 0.05)),
                   child: Text(
                     "Toplululuğa Üye Ol",
                     style: TextStyle(
+                        color: Color.fromARGB(255, 42, 98, 154),
                         fontFamily: "Lalezar",
                         fontSize: MediaQuery.of(context).size.width * 0.05),
                   ),
@@ -220,7 +225,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
               // Eğer istek atanlar arasında mevcut kullanıcı varsa uyarı yap
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(
-                    backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+                    backgroundColor: const Color.fromARGB(255, 255, 127, 62),
                     content: Align(
                       alignment: Alignment.center,
                       child: Text(
@@ -250,7 +255,7 @@ class _ToplulukDetayState extends State<ToplulukDetay> {
 
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(
-                    backgroundColor: const Color.fromARGB(255, 34, 202, 152),
+                    backgroundColor: const Color.fromARGB(255, 255, 127, 62),
                     content: Align(
                       alignment: Alignment.center,
                       child: Text(

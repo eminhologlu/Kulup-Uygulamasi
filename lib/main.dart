@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:kulup/loading.dart';
 import 'package:kulup/login.dart';
@@ -24,15 +23,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Shequ',
+      title: 'Topluluk',
       debugShowCheckedModeBanner: false,
       home: FutureBuilder(
-        future: Future.delayed(const Duration(seconds: 2)), // 5 saniye bekle
+        future: Future.delayed(const Duration(seconds: 2)),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const LoadingScreen(); // Bekleme ekranını göster
+            return const LoadingScreen();
           } else {
-            return const LoginPage(); // Bekleme süresi dolduktan sonra giriş sayfasını göster
+            return const LoginPage();
           }
         },
       ),

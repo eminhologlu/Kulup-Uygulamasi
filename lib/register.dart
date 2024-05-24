@@ -31,10 +31,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 Icons.arrow_back_ios_new_rounded,
                 color: Colors.white,
               )),
-          backgroundColor: const Color.fromARGB(255, 25, 139, 28),
+          backgroundColor: const Color.fromARGB(255, 42, 98, 154),
         ),
       ),
-      backgroundColor: const Color.fromARGB(255, 25, 139, 28),
+      backgroundColor: const Color.fromARGB(255, 42, 98, 154),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   style: TextStyle(
                     fontFamily: "Lalezar",
                     fontSize: MediaQuery.of(context).size.width * 0.12,
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 255, 218, 120),
                   ),
                 ),
                 Text(
@@ -68,7 +68,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Text(
                     "Kullanıcı Adı",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 255, 218, 120),
                         fontFamily: "Lalezar",
                         fontSize: MediaQuery.of(context).size.width * 0.06),
                   ),
@@ -77,7 +77,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Text(
                     "Eposta",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 255, 218, 120),
                         fontFamily: "Lalezar",
                         fontSize: MediaQuery.of(context).size.width * 0.06),
                   ),
@@ -86,7 +86,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Text(
                     "Öğrenci No",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 255, 218, 120),
                         fontFamily: "Lalezar",
                         fontSize: MediaQuery.of(context).size.width * 0.06),
                   ),
@@ -95,7 +95,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Text(
                     "Şifre",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 255, 218, 120),
                         fontFamily: "Lalezar",
                         fontSize: MediaQuery.of(context).size.width * 0.06),
                   ),
@@ -104,7 +104,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Text(
                     "Şifre Tekrarı",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 255, 218, 120),
                         fontFamily: "Lalezar",
                         fontSize: MediaQuery.of(context).size.width * 0.06),
                   ),
@@ -119,7 +119,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           repasswordController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           backgroundColor:
-                              const Color.fromARGB(255, 79, 93, 154),
+                              const Color.fromARGB(255, 255, 127, 62),
                           content: Align(
                             alignment: Alignment.center,
                             child: Text(
@@ -135,7 +135,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           repasswordController.text) {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           backgroundColor:
-                              const Color.fromARGB(255, 79, 93, 154),
+                              const Color.fromARGB(255, 255, 127, 62),
                           content: Align(
                             alignment: Alignment.center,
                             child: Text(
@@ -157,12 +157,13 @@ class _RegisterPageState extends State<RegisterPage> {
                       }
                     },
                     style: FilledButton.styleFrom(
-                        backgroundColor: Colors.black,
+                        backgroundColor: Color.fromARGB(255, 255, 218, 120),
                         fixedSize: Size(MediaQuery.of(context).size.width * 0.7,
                             MediaQuery.of(context).size.height * 0.05)),
                     child: Text(
                       "Kayıt Ol",
                       style: TextStyle(
+                          color: Color.fromARGB(255, 42, 98, 154),
                           fontFamily: "Lalezar",
                           fontSize: MediaQuery.of(context).size.width * 0.05),
                     ),
@@ -200,10 +201,11 @@ class _RegisterPageState extends State<RegisterPage> {
         controller: controller,
         inputFormatters: [LengthLimitingTextInputFormatter(uzunluk)],
         style: TextStyle(
-            fontSize: MediaQuery.of(context).size.height * 0.022,
+            color: Color.fromARGB(255, 255, 127, 62),
+            fontSize: MediaQuery.of(context).size.height * 0.026,
             fontFamily: "Lalezar"),
         cursorHeight: MediaQuery.of(context).size.height * 0.02,
-        cursorColor: Colors.black,
+        cursorColor: Color.fromARGB(255, 255, 127, 62),
         decoration: InputDecoration(
           contentPadding:
               EdgeInsets.only(left: MediaQuery.of(context).size.height * 0.01),

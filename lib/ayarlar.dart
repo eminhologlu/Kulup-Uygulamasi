@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:kulup/login.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk_flutter.dart';
 
@@ -31,7 +30,7 @@ class _AyarlarState extends State<Ayarlar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 79, 93, 154),
+        backgroundColor: Color.fromARGB(255, 42, 98, 154),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -41,7 +40,7 @@ class _AyarlarState extends State<Ayarlar> {
               color: Colors.white,
             )),
       ),
-      backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+      backgroundColor: const Color.fromARGB(255, 42, 98, 154),
       body: Center(
         child: Column(
           children: [
@@ -50,12 +49,13 @@ class _AyarlarState extends State<Ayarlar> {
                 doUserLogout();
               },
               style: FilledButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 218, 83, 83),
+                  backgroundColor: const Color.fromARGB(255, 255, 218, 120),
                   fixedSize: Size(MediaQuery.of(context).size.width * 0.7,
                       MediaQuery.of(context).size.height * 0.05)),
               child: Text(
                 "Çıkış Yap",
                 style: TextStyle(
+                    color: Color.fromARGB(255, 42, 98, 154),
                     fontFamily: "Lalezar",
                     fontSize: MediaQuery.of(context).size.width * 0.05),
               ),

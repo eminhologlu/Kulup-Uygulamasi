@@ -72,7 +72,7 @@ class _TopluluklarState extends State<Topluluklar> {
                   )),
               flexibleSpace: Container(
                 decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 79, 93, 154)),
+                    color: Color.fromARGB(255, 42, 98, 154)),
               ),
               title: TextField(
                 cursorHeight: MediaQuery.of(context).size.height * 0.02,
@@ -97,7 +97,7 @@ class _TopluluklarState extends State<Topluluklar> {
                 onChanged: _filterTopluluklar,
               ),
             ),
-            backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+            backgroundColor: const Color.fromARGB(255, 42, 98, 154),
             body: ListView.separated(
               shrinkWrap: true,
               padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.03),
@@ -126,11 +126,11 @@ class _TopluluklarState extends State<Topluluklar> {
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.115,
                     decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 133, 202, 149),
+                        color: const Color.fromARGB(255, 255, 218, 120),
                         border: Border.all(
-                            color: const Color.fromARGB(255, 133, 202, 149)),
+                            color: const Color.fromARGB(255, 83, 124, 84)),
                         borderRadius: BorderRadius.circular(
-                            MediaQuery.of(context).size.width * 0.05)),
+                            MediaQuery.of(context).size.width * 0.13)),
                     child: Padding(
                       padding: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width * 0.03),
@@ -141,7 +141,8 @@ class _TopluluklarState extends State<Topluluklar> {
                                 ? NetworkImage(logoURL)
                                 : const NetworkImage(
                                     "https://unievi.firat.edu.tr/assets/front/img/firat-logo-yeni.png"),
-                            backgroundColor: Colors.white,
+                            backgroundColor:
+                                const Color.fromARGB(0, 255, 255, 255),
                             radius: MediaQuery.of(context).size.width * 0.085,
                           ),
                           Padding(
@@ -154,10 +155,11 @@ class _TopluluklarState extends State<Topluluklar> {
                                   '$toplulukAdi',
                                   overflow: TextOverflow.visible,
                                   style: TextStyle(
+                                      color: Color.fromARGB(255, 0, 50, 133),
                                       fontFamily: "Lalezar",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.045),
+                                              0.05),
                                 ),
                               ),
                             ),

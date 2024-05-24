@@ -11,7 +11,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 25, 139, 28),
+      backgroundColor: const Color.fromARGB(255, 42, 98, 154),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,24 +20,27 @@ class _LoadingScreenState extends State<LoadingScreen> {
             Container(
               child: Image.asset(
                 "assets/images/firatlogo.png",
-                scale: MediaQuery.of(context).size.width * 0.005,
+                scale: MediaQuery.of(context).size.width * 0.007,
               ),
             ),
             Text(
               "Fırat Üniversitesi",
               style: TextStyle(
+                  color: Color.fromARGB(255, 255, 218, 120),
                   fontSize: MediaQuery.of(context).size.width * 0.1,
                   fontFamily: "Lalezar"),
             ),
             Text(
               "Öğrenci Toplulukları",
               style: TextStyle(
+                  color: Color.fromARGB(255, 255, 218, 120),
                   fontSize: MediaQuery.of(context).size.width * 0.1,
                   fontFamily: "Lalezar"),
             ),
             Text(
               "Mobil Uygulaması",
               style: TextStyle(
+                  color: Color.fromARGB(255, 255, 218, 120),
                   fontSize: MediaQuery.of(context).size.width * 0.1,
                   fontFamily: "Lalezar"),
             ),

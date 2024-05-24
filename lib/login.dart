@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 25, 139, 28),
+        backgroundColor: Color.fromARGB(255, 42, 98, 154),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                         fontFamily: "Lalezar",
                         fontSize: MediaQuery.of(context).size.width * 0.12,
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 255, 218, 120),
                       ),
                     ),
                   ),
@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       "Kullanıcı Adı",
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 255, 218, 120),
                           fontFamily: "Lalezar",
                           fontSize: MediaQuery.of(context).size.width * 0.06),
                     ),
@@ -66,11 +66,12 @@ class _LoginPageState extends State<LoginPage> {
                         controller: usernameController,
                         inputFormatters: [LengthLimitingTextInputFormatter(20)],
                         style: TextStyle(
+                            color: Color.fromARGB(255, 255, 127, 62),
                             fontSize:
-                                MediaQuery.of(context).size.height * 0.022,
+                                MediaQuery.of(context).size.height * 0.026,
                             fontFamily: "Lalezar"),
                         cursorHeight: MediaQuery.of(context).size.height * 0.02,
-                        cursorColor: Colors.black,
+                        cursorColor: Color.fromARGB(255, 255, 127, 62),
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(
                               left: MediaQuery.of(context).size.height * 0.01),
@@ -97,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       "Şifre",
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 255, 218, 120),
                           fontFamily: "Lalezar",
                           fontSize: MediaQuery.of(context).size.width * 0.06),
                     ),
@@ -109,11 +110,12 @@ class _LoginPageState extends State<LoginPage> {
                         controller: passwordController,
                         inputFormatters: [LengthLimitingTextInputFormatter(20)],
                         style: TextStyle(
+                            color: Color.fromARGB(255, 255, 127, 62),
                             fontSize:
-                                MediaQuery.of(context).size.height * 0.022,
+                                MediaQuery.of(context).size.height * 0.026,
                             fontFamily: "Lalezar"),
                         cursorHeight: MediaQuery.of(context).size.height * 0.02,
-                        cursorColor: Colors.black,
+                        cursorColor: Color.fromARGB(255, 255, 127, 62),
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(
                               left: MediaQuery.of(context).size.height * 0.01),
@@ -143,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                               "Şifremi unuttum",
                               style: TextStyle(
                                   fontFamily: "Lalezar",
-                                  color: Colors.grey[200]),
+                                  color: Color.fromARGB(255, 255, 218, 120)),
                             ))),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.07,
@@ -154,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                             passwordController.text.isEmpty) {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             backgroundColor:
-                                const Color.fromARGB(255, 79, 93, 154),
+                                const Color.fromARGB(255, 255, 127, 62),
                             content: Align(
                               alignment: Alignment.center,
                               child: Text(
@@ -176,13 +178,14 @@ class _LoginPageState extends State<LoginPage> {
                         }
                       },
                       style: FilledButton.styleFrom(
-                          backgroundColor: Colors.black,
+                          backgroundColor: Color.fromARGB(255, 255, 218, 120),
                           fixedSize: Size(
                               MediaQuery.of(context).size.width * 0.7,
                               MediaQuery.of(context).size.height * 0.05)),
                       child: Text(
                         "Giriş Yap",
                         style: TextStyle(
+                            color: Color.fromARGB(255, 42, 98, 154),
                             fontFamily: "Lalezar",
                             fontSize: MediaQuery.of(context).size.width * 0.05),
                       ),
@@ -204,8 +207,9 @@ class _LoginPageState extends State<LoginPage> {
               Text(
                 "Henüz hesabın yok mu?",
                 style: TextStyle(
+                    color: Color.fromARGB(255, 255, 218, 120),
                     fontFamily: "Lalezar",
-                    fontSize: MediaQuery.of(context).size.width * 0.04),
+                    fontSize: MediaQuery.of(context).size.width * 0.05),
               ),
               InkWell(
                   onTap: () {
@@ -219,8 +223,8 @@ class _LoginPageState extends State<LoginPage> {
                     "Kayıt Ol",
                     style: TextStyle(
                         fontFamily: "Lalezar",
-                        color: Colors.grey[200],
-                        fontSize: MediaQuery.of(context).size.width * 0.05),
+                        color: Colors.white,
+                        fontSize: MediaQuery.of(context).size.width * 0.06),
                   ))
             ],
           ),

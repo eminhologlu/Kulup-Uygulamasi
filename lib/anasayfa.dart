@@ -15,11 +15,11 @@ class _AnasayfaState extends State<Anasayfa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+      backgroundColor: const Color.fromARGB(255, 42, 98, 154),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.13),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.085),
             GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -27,7 +27,22 @@ class _AnasayfaState extends State<Anasayfa> {
                       MaterialPageRoute(
                           builder: (context) => const Topluluklar()));
                 },
-                child: buildContainer("Öğrenci Toplulukları")),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.stacked_bar_chart_rounded,
+                      size: MediaQuery.of(context).size.width * 0.3,
+                      color: Color.fromARGB(255, 255, 218, 120),
+                    ),
+                    Text(
+                      "Öğrenci Toplulukları",
+                      style: TextStyle(
+                          fontFamily: "Lalezar",
+                          color: Colors.white,
+                          fontSize: MediaQuery.of(context).size.width * 0.05),
+                    )
+                  ],
+                )),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             GestureDetector(
                 onTap: () {
@@ -36,7 +51,22 @@ class _AnasayfaState extends State<Anasayfa> {
                       MaterialPageRoute(
                           builder: (context) => const Uyelikler()));
                 },
-                child: buildContainer("Üyesi Olduğun Topluluklar")),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.lock_person_rounded,
+                      size: MediaQuery.of(context).size.width * 0.3,
+                      color: Color.fromARGB(255, 255, 218, 120),
+                    ),
+                    Text(
+                      "Üye Olduğun Topluluklar",
+                      style: TextStyle(
+                          fontFamily: "Lalezar",
+                          color: Colors.white,
+                          fontSize: MediaQuery.of(context).size.width * 0.05),
+                    )
+                  ],
+                )),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             GestureDetector(
                 onTap: () {
@@ -45,14 +75,44 @@ class _AnasayfaState extends State<Anasayfa> {
                       MaterialPageRoute(
                           builder: (context) => const KulupYonetim()));
                 },
-                child: buildContainer("Yönetici Olduğun Topluluklar")),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.admin_panel_settings_rounded,
+                      size: MediaQuery.of(context).size.width * 0.3,
+                      color: Color.fromARGB(255, 255, 218, 120),
+                    ),
+                    Text(
+                      "Yönetici Olduğun Topluluklar",
+                      style: TextStyle(
+                          fontFamily: "Lalezar",
+                          color: Colors.white,
+                          fontSize: MediaQuery.of(context).size.width * 0.05),
+                    )
+                  ],
+                )),
             SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             GestureDetector(
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const Ayarlar()));
                 },
-                child: buildContainer("Ayarlar")),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.settings_applications_rounded,
+                      size: MediaQuery.of(context).size.width * 0.3,
+                      color: Color.fromARGB(255, 255, 218, 120),
+                    ),
+                    Text(
+                      "Ayarlar",
+                      style: TextStyle(
+                          fontFamily: "Lalezar",
+                          color: Colors.white,
+                          fontSize: MediaQuery.of(context).size.width * 0.05),
+                    )
+                  ],
+                )),
           ],
         ),
       ),

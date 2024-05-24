@@ -46,7 +46,7 @@ class _UyeliklerState extends State<Uyelikler> {
                     fontSize: MediaQuery.of(context).size.width * 0.07,
                     color: Colors.white),
               ),
-              backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+              backgroundColor: const Color.fromARGB(255, 42, 98, 154),
               leading: GestureDetector(
                   onTap: () {
                     Navigator.pop(context);
@@ -56,7 +56,7 @@ class _UyeliklerState extends State<Uyelikler> {
                     color: Colors.white,
                   )),
             ),
-            backgroundColor: const Color.fromARGB(255, 79, 93, 154),
+            backgroundColor: const Color.fromARGB(255, 42, 98, 154),
             body: topluluklar.isEmpty
                 ? Column(
                     children: [
@@ -87,13 +87,14 @@ class _UyeliklerState extends State<Uyelikler> {
                               ));
                         },
                         style: FilledButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 0, 0, 0),
+                            backgroundColor: Color.fromARGB(255, 255, 218, 120),
                             fixedSize: Size(
                                 MediaQuery.of(context).size.width * 0.6,
                                 MediaQuery.of(context).size.height * 0.05)),
                         child: Text(
                           "Topluluklara Göz At",
                           style: TextStyle(
+                              color: Color.fromARGB(255, 42, 98, 154),
                               fontFamily: "Lalezar",
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.045),
@@ -124,12 +125,12 @@ class _UyeliklerState extends State<Uyelikler> {
                           child: Container(
                             height: MediaQuery.of(context).size.height * 0.115,
                             decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 133, 202, 149),
+                                color: const Color.fromARGB(255, 255, 218, 120),
                                 border: Border.all(
                                     color: const Color.fromARGB(
-                                        255, 133, 202, 149)),
+                                        255, 255, 218, 120)),
                                 borderRadius: BorderRadius.circular(
-                                    MediaQuery.of(context).size.width * 0.05)),
+                                    MediaQuery.of(context).size.width * 0.12)),
                             child: Padding(
                               padding: EdgeInsets.only(
                                   left:
@@ -142,7 +143,8 @@ class _UyeliklerState extends State<Uyelikler> {
                                         ? NetworkImage(topluluk['logo'])
                                         : const NetworkImage(
                                             "https://unievi.firat.edu.tr/assets/front/img/firat-logo-yeni.png"),
-                                    backgroundColor: Colors.white,
+                                    backgroundColor:
+                                        const Color.fromARGB(0, 255, 255, 255),
                                     radius: MediaQuery.of(context).size.width *
                                         0.085,
                                   ),
@@ -159,11 +161,13 @@ class _UyeliklerState extends State<Uyelikler> {
                                           topluluk['toplulukadi'],
                                           overflow: TextOverflow.visible,
                                           style: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 42, 98, 154),
                                               fontFamily: "Lalezar",
                                               fontSize: MediaQuery.of(context)
                                                       .size
                                                       .width *
-                                                  0.045),
+                                                  0.05),
                                         ),
                                       ),
                                     ),
